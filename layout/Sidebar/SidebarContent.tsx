@@ -16,7 +16,7 @@ const SidebarContent = ({ onClose }: SidebarProps) => {
     <Flex
       direction={'column'}
       justify='space-between'
-      bg={useColorModeValue('gray.100', 'gray.900')}
+      // bg={useColorModeValue('gray.100', 'gray.900')}
       borderRight="1px"
       borderRightColor={useColorModeValue('gray.300', 'gray.700')}
       w={{ base: 'full', md: 48 }}

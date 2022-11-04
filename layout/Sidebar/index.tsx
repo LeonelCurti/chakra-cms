@@ -8,7 +8,7 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
   return (
     <Box
       minH="100vh"
-      bg={useColorModeValue('gray.100', 'gray.900')}
+      // bg={useColorModeValue('gray.100', 'gray.900')}
     >
       {/* fixed sidebar for desktop */}
       <Box display={{ base: 'none', md: 'block' }} >

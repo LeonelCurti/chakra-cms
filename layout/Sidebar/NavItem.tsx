@@ -8,10 +8,10 @@ type Props = {
 };
 
 export const NavItem = ({ item }: Props) => {
+  const router = useRouter();
   const { label } = item;
 
   if (item.type === 'link') {
-    const router = useRouter();
     const { icon } = item;
     const isActive = router.pathname === item.href
 
