@@ -3,11 +3,13 @@ import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
+  getPaginationRowModel,
   useReactTable,
 } from '@tanstack/react-table'
-import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Checkbox, Box } from "@chakra-ui/react";
+import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Checkbox, Box, Tfoot } from "@chakra-ui/react";
 import { data } from './dummyData';
 import RowActions from './RowActions';
+import Pagination from './Pagination';
 
 
 export type Product = {
@@ -53,6 +55,7 @@ const ProductsTable = () => {
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
   })
 
 
@@ -87,6 +90,13 @@ const ProductsTable = () => {
             ))
           }
         </Tbody>
+        <Tfoot>
+          <Tr>
+            <Th colSpan={6}>      
+              <Pagination table={table} />              
+            </Th>
+          </Tr>
+        </Tfoot>
       </Table>
     </TableContainer>
   )
