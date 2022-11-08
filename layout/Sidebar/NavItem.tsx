@@ -36,7 +36,7 @@ export const NavItem = ({ item }: Props) => {
               height={5}
               mr={4}
               ml={4}
-              color={isActive ? "blue.600" : ""}
+              color={isActive ? "blue.500" : ""}
               as={icon}
             />
             <Text
@@ -44,12 +44,12 @@ export const NavItem = ({ item }: Props) => {
               fontWeight="medium"
               flex={1}
               letterSpacing="wider"
-              color={isActive ? "blue.600" : ""}
+              color={isActive ? "blue.500" : ""}
             >
               {label}
             </Text>
             {isActive && (
-              <Box width={1} height={6} bg="blue.600" />
+              <Box width={1} height={6} bg="blue.500" />
             )}
           </HStack>
         </Link>

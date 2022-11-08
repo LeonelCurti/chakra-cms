@@ -1,8 +1,8 @@
 import React from 'react'
 import { Table } from '@tanstack/react-table'
-import { Product } from './ProductsTable'
 import { HStack, IconButton, Select, Text } from '@chakra-ui/react'
 import { FiChevronLeft, FiChevronRight, FiChevronsLeft, FiChevronsRight } from 'react-icons/fi'
+import { Product } from './types'
 
 const Pagination = ({ table }: { table: Table<Product> }) => {
   return (

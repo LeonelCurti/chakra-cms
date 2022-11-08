@@ -6,35 +6,36 @@ import {
   getPaginationRowModel,
   useReactTable,
 } from '@tanstack/react-table'
-import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Checkbox, Box, Tfoot } from "@chakra-ui/react";
+import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Checkbox, Box, Tfoot, Text } from "@chakra-ui/react";
 import { data } from './dummyData';
 import RowActions from './RowActions';
 import Pagination from './Pagination';
-
-
-export type Product = {
-  sku: string;
-  category: string;
-  price: number;
-};
+import { Product } from './types';
 
 const columnHelper = createColumnHelper<Product>()
 
 const columns = [
   columnHelper.display({
     id: 'select',
-    header: () => <Checkbox></Checkbox>,
-    cell: () => <Checkbox></Checkbox>,
+    header: ({ table }) => <Checkbox
+      isChecked={table.getIsAllRowsSelected()} isIndeterminate={table.getIsSomeRowsSelected()} onChange={table.getToggleAllRowsSelectedHandler()} />,
+    cell: ({ row }) => <Checkbox
+      isChecked={row.getIsSelected()}
+      isIndeterminate={row.getIsSomeSelected()}
+      onChange={row.getToggleSelectedHandler()} />,
   }),
   columnHelper.display({
     id: 'image',
     header: () => 'Image',
     cell: () => <Box w={10} h={10} bg='gray.100' />
   }),
-  columnHelper.accessor('sku', {
-    header: () => 'SKU',
-    cell: info => info.renderValue(),
-  }),
+  columnHelper.accessor('name', {
+    header: () => 'Name',
+    cell: props => <>
+      <Text>{props.renderValue()}</Text>
+      <Text fontSize='xs'>{`SKU: ${props.row.original.sku}`}</Text>
+    </>
+  }), 
   columnHelper.accessor('category', {
     header: () => 'Category',
     cell: info => info.renderValue(),
@@ -51,13 +52,18 @@ const columns = [
 ]
 
 const ProductsTable = () => {
+  const [rowSelection, setRowSelection] = React.useState({})
   const table = useReactTable({
     data,
     columns,
+    state: {
+      rowSelection,
+    },
+    onRowSelectionChange: setRowSelection,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
   })
-
+  //console.log(table);
 
   return (
     <TableContainer>
@@ -92,8 +98,8 @@ const ProductsTable = () => {
         </Tbody>
         <Tfoot>
           <Tr>
-            <Th colSpan={6}>      
-              <Pagination table={table} />              
+            <Th colSpan={6}>
+              <Pagination table={table} />
             </Th>
           </Tr>
         </Tfoot>

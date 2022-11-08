@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { Box, Button, Container, Flex, Heading, HStack, Input, InputGroup, InputRightElement, Select, Text } from '@chakra-ui/react'
+import { Box, Button, Container, Flex, Heading, HStack, Input, InputGroup, InputRightElement, Select, Stack, Text } from '@chakra-ui/react'
 import Sidebar from '../layout/Sidebar'
 import { FiPlus, FiSearch } from 'react-icons/fi'
 import ProductsTable from '../components/Products/ProductsTable'
@@ -8,8 +8,8 @@ const Products: NextPage = () => {
   return (
     <Sidebar>
       <Container maxW='container.md'>
-        <HStack justify={'space-between'} pt={'6'}>
-          <Heading size={'md'}>
+        <Stack direction={{base:'column', md:'row'}} justify={'space-between'} alignItems={'center'} pt={{base:'4',md:'6'}}>
+          <Heading size={{base:'md', md:'lg'}}>
             Products
           </Heading>
           <HStack>
@@ -17,7 +17,7 @@ const Products: NextPage = () => {
             <Button colorScheme='blue' variant='ghost'>Import</Button>
             <Button colorScheme='blue' variant='ghost'>Export</Button>
           </HStack>
-        </HStack>
+        </Stack>
 
         <InputGroup my={'4'} >
           <Input
@@ -39,6 +39,7 @@ const Products: NextPage = () => {
         </InputGroup>
 
         <Flex
+          direction={{base:'column',md:'row'}}
           my={'4'}
           py={4}
           px={3}
