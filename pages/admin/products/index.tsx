@@ -1,19 +1,25 @@
 import type { NextPage } from 'next'
 import { Box, Button, Container, Flex, Heading, HStack, Input, InputGroup, InputRightElement, Select, Stack, Text } from '@chakra-ui/react'
-import Sidebar from '../layout/Sidebar'
+import Sidebar from '../../../layout/Sidebar'
 import { FiPlus, FiSearch } from 'react-icons/fi'
-import ProductsTable from '../components/Products/ProductsTable'
-
+import ProductsTable from '../../../components/Products/ProductsTable'
+import { useRouter } from 'next/router'
 const Products: NextPage = () => {
+  const router = useRouter()
   return (
     <Sidebar>
       <Container maxW='container.md'>
+
         <Stack direction={{base:'column', md:'row'}} justify={'space-between'} alignItems={'center'} pt={{base:'4',md:'6'}}>
           <Heading size={{base:'md', md:'lg'}}>
             Products
           </Heading>
           <HStack>
-            <Button colorScheme='blue' leftIcon={<FiPlus />}>Add Product</Button>
+            <Button 
+              colorScheme='blue' 
+              leftIcon={<FiPlus />}
+              onClick={() => router.push('/admin/products/new')}
+            >Add New</Button>
             <Button colorScheme='blue' variant='ghost'>Import</Button>
             <Button colorScheme='blue' variant='ghost'>Export</Button>
           </HStack>

@@ -18,13 +18,13 @@ export const navItems: NavItem[] = [
   // },
   {
     type: 'link',
-    href: '/products',
+    href: '/admin/products',
     icon: FiShoppingCart,
     label: 'Products',
   },
   {
     type: 'link',
-    href: '/settings',
+    href: '/admin/settings',
     icon: FiSettings,
     label: 'Settings',
   },
