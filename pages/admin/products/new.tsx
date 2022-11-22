@@ -5,12 +5,13 @@ import { BiCategory } from "react-icons/bi";
 import { FiMove, FiImage } from 'react-icons/fi';
 import { IoOptionsOutline } from 'react-icons/io5';
 import UploadGallery from '../../../components/Products/uploadGallery';
+import AddCategory from '../../../components/Products/AddCategory';
 
 const AddProduct = () => {
   return (
     <Sidebar>
       <Container maxW='container.md'>
-        <Heading size={{ base: 'lg', md: 'lg' }} mt={2}>
+        <Heading size={{ base: 'lg', md: 'lg' }} >
           Add new product
         </Heading>
 
@@ -54,9 +55,7 @@ const AddProduct = () => {
               </Text>
             </Flex>
           </Flex>
-          <Button variant={'ghost'} colorScheme={'blue'}>
-            Add category
-          </Button>
+          <AddCategory />
         </Flex>
 
         <Flex

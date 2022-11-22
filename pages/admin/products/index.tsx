@@ -9,7 +9,6 @@ const Products: NextPage = () => {
   return (
     <Sidebar>
       <Container maxW='container.md'>
-
         <Stack direction={{base:'column', md:'row'}} justify={'space-between'} alignItems={'center'} pt={{base:'4',md:'6'}}>
           <Heading size={{base:'md', md:'lg'}}>
             Products
