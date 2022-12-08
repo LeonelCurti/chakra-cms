@@ -3,7 +3,7 @@ import { Box, Flex, Heading, Icon, Input } from '@chakra-ui/react'
 
 import { FiImage } from 'react-icons/fi';
 
-const UploadGallery = () => {
+const ProductGallery = () => {
   return (
     <Box      
       my={6}
@@ -46,4 +46,4 @@ const UploadGallery = () => {
   )
 }
 
-export default UploadGallery
+export default ProductGallery

@@ -1,7 +1,7 @@
 import { Accordion, AccordionButton, AccordionItem, AccordionPanel, Button, Checkbox, Flex, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Select, Text, useDisclosure } from '@chakra-ui/react'
 import React from 'react'
 
-const AddCategory = () => {
+const AddCategoryButton = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
@@ -30,7 +30,7 @@ const AddCategory = () => {
               <Checkbox>Category 2</Checkbox>
               <Checkbox>Category 3</Checkbox>
               <Checkbox>Category 4</Checkbox>
-              <Checkbox>Category 5</Checkbox>      
+              <Checkbox>Category 5</Checkbox>
             </Flex>
             <Accordion allowToggle variant='outline'>
               <AccordionItem border={'none'}>
@@ -44,17 +44,16 @@ const AddCategory = () => {
                 <AccordionPanel p={0}>
                   <Flex
                     direction={'column'}
-                    gap={3}
+                    gap={4}
                     p={3}
                     borderWidth={'1px'}
                     borderRadius={'md'}>
                     <Input type="name" />
-                    <Select placeholder='Parent category'>
+                    <Select placeholder='-Parent category-'>
                       <option>T-shirts</option>
                       <option>Shoes</option>
                     </Select>
                     <Button colorScheme='blue' variant='outline'>Add new category</Button>
-
                   </Flex>
                 </AccordionPanel>
               </AccordionItem>
@@ -71,4 +70,4 @@ const AddCategory = () => {
   )
 }
 
-export default AddCategory
+export default AddCategoryButton

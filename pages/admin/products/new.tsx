@@ -1,11 +1,12 @@
-import { Box, Button, Center, Container, Flex, FormControl, FormLabel, Heading, Icon, Input, Text, Textarea } from '@chakra-ui/react'
+import { Button, Container, Flex, FormControl, FormLabel, Heading, Icon, Input, Text, Textarea } from '@chakra-ui/react'
 import React from 'react'
 import Sidebar from '../../../layout/Sidebar'
 import { BiCategory } from "react-icons/bi";
 import { FiMove, FiImage } from 'react-icons/fi';
 import { IoOptionsOutline } from 'react-icons/io5';
-import UploadGallery from '../../../components/Products/uploadGallery';
-import AddCategory from '../../../components/Products/AddCategory';
+import UploadGallery from '../../../components/Products/ProductGallery';
+import AddCategoryButton from '../../../components/Products/AddCategoryButton';
+import MoreOptionsButton from '../../../components/Products/MoreOptionsButton';
 
 const AddProduct = () => {
   return (
@@ -18,7 +19,6 @@ const AddProduct = () => {
         <Flex
           direction={'column'}
           gap={3}
-          rounded={'lg'}
           mt={6}
           p={3}
           borderWidth={'1px'}
@@ -55,7 +55,7 @@ const AddProduct = () => {
               </Text>
             </Flex>
           </Flex>
-          <AddCategory />
+          <AddCategoryButton />
         </Flex>
 
         <Flex
@@ -97,9 +97,7 @@ const AddProduct = () => {
               </Text>
             </Flex>
           </Flex>
-          <Button variant={'ghost'} colorScheme={'blue'}>
-            Edit options
-          </Button>
+          <MoreOptionsButton />
         </Flex>
 
         <Flex justify={'flex-end'} gap={3} my={6}>
