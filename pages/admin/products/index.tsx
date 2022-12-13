@@ -1,13 +1,14 @@
 import type { NextPage } from 'next'
 import { Box, Button, Container, Flex, Heading, HStack, Input, InputGroup, InputRightElement, Select, Stack, Text } from '@chakra-ui/react'
-import Sidebar from '../../../layout/Sidebar'
 import { FiPlus, FiSearch } from 'react-icons/fi'
 import ProductsTable from '../../../components/Products/ProductsTable'
 import { useRouter } from 'next/router'
+import AdminLayout from '../../../layout/Admin'
+
 const Products: NextPage = () => {
   const router = useRouter()
   return (
-    <Sidebar>
+    <AdminLayout>
       <Container maxW='container.md'>
         <Stack direction={{base:'column', md:'row'}} justify={'space-between'} alignItems={'center'} pt={{base:'4',md:'6'}}>
           <Heading size={{base:'md', md:'lg'}}>
@@ -81,7 +82,7 @@ const Products: NextPage = () => {
         </Box>
 
       </Container>
-    </Sidebar>
+    </AdminLayout>
   )
 }
 

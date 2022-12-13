@@ -1,17 +1,15 @@
 import React from 'react'
-import { Box, Flex, Heading, Icon, Input } from '@chakra-ui/react'
+import { Box, Flex, Heading, Icon, Input, Text, useColorModeValue } from '@chakra-ui/react'
 
 import { FiImage } from 'react-icons/fi';
 
 const ProductGallery = () => {
+  const textColor = useColorModeValue("gray.700", "white");
   return (
-    <Box      
-      my={6}
-      p={3}
-      borderWidth={'1px'}
-      borderRadius={'md'}
-    >
-      <Heading size={'sm'}>Images</Heading>
+    <>
+      <Text fontSize='lg' color={textColor} fontWeight='bold' mb={2}>
+        Product Images
+      </Text>
       <Flex justify={'space-evenly'} gap={5} py={6} wrap={'wrap'}>
         {
           [1, 2, 3, 4].map((el, i) => (
@@ -22,7 +20,7 @@ const ProductGallery = () => {
               borderWidth={'1px'}
               borderRadius={'md'}
               borderStyle={'dashed'}
-              
+
             ><Input
                 type="file"
                 height="100%"
@@ -33,7 +31,7 @@ const ProductGallery = () => {
                 opacity="0"
                 aria-hidden="true"
                 accept="image/*"
-                _hover={{cursor:'pointer'}}                
+                _hover={{ cursor: 'pointer' }}
               />
               <Flex justify={'center'} align={'center'}>
                 <Icon as={FiImage} boxSize={'16'} />
@@ -42,7 +40,7 @@ const ProductGallery = () => {
           ))
         }
       </Flex>
-    </Box>
+    </>
   )
 }
 

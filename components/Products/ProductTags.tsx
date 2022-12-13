@@ -1,4 +1,4 @@
-import { Flex, FormControl, FormLabel, Input, InputProps, Tag, TagCloseButton, TagLabel, Wrap, WrapItem } from '@chakra-ui/react'
+import { Flex, Input, InputProps, Tag, TagCloseButton, TagLabel, Text, useColorModeValue, Wrap, WrapItem } from '@chakra-ui/react'
 import React, { KeyboardEvent, useState } from 'react'
 
 export type Props = InputProps & {
@@ -10,7 +10,7 @@ export type Props = InputProps & {
 const ProductTags = (props: Props) => {
   const { tags = [], onTagsChange, onTagRemove } = props
   const [value, setValue] = useState('');
-
+  const textColor = useColorModeValue("gray.700", "white");
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
   };
@@ -25,13 +25,14 @@ const ProductTags = (props: Props) => {
   }
   return (
     <>
-      <Flex direction={'column'} gap={2} w='full'>
-        <FormControl>
-          <FormLabel>Product Tags</FormLabel>
-          <Input value={value} onChange={onChange} onKeyDown={handleKeyDown} placeholder={'Type '} />
-        </FormControl>
+      <Flex direction={'column'} gap={3} w='full'>
+        <Text fontSize='lg' color={textColor} fontWeight='bold' mb={2}>
+          Product Tags
+        </Text>
+        <Input value={value} onChange={onChange} onKeyDown={handleKeyDown} placeholder={'Type '} />
 
-        <Wrap align='center'>
+
+        <Wrap align='center' p={1} overflow={'auto'} maxH={'150px'}>
           {
             tags.map((tag, index) => (
               <WrapItem key={index}>

@@ -7,7 +7,7 @@ type Props = {
   item: Item;
 };
 
-export const NavItem = ({ item }: Props) => {
+const NavItem = ({ item }: Props) => {
   const router = useRouter();
   const { label } = item;
 
@@ -72,3 +72,4 @@ export const NavItem = ({ item }: Props) => {
     </Heading>
   );
 };
+export default NavItem

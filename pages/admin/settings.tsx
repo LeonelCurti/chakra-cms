@@ -1,14 +1,14 @@
 import type { NextPage } from 'next'
 import { Box } from '@chakra-ui/react'
-import Sidebar from '../../layout/Sidebar'
+import AdminLayout from '../../layout/Admin'
 
 const Settings: NextPage = () => {
   return (
-    <Sidebar>
+    <AdminLayout>
       <Box p="4">      
           Settings          
       </Box>
-    </Sidebar>
+    </AdminLayout>
   )
 }
 

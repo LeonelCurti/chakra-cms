@@ -1,16 +1,16 @@
 import React from 'react'
 import { Box, BoxProps, CloseButton, Flex, IconButton, List, ListItem, Text, useColorMode, useColorModeValue } from '@chakra-ui/react'
-import { NavItem } from './NavItem';
-import { navItems } from './navData';
+import SidebarNavItem from './SidebarNavItem';
 import { FiMoon, FiSun } from 'react-icons/fi';
+import { NavItem } from './types';
 
 interface SidebarProps extends BoxProps {
   onClose: () => void;
+  routes: NavItem[];
 }
 
-const SidebarContent = ({ onClose }: SidebarProps) => {
+const SidebarContent = ({ routes, onClose }: SidebarProps) => {
   const { toggleColorMode, colorMode } = useColorMode()
-
 
   return (
     <Flex
@@ -32,11 +32,11 @@ const SidebarContent = ({ onClose }: SidebarProps) => {
         </Flex>
 
         <List width="full" overflowY="auto">
-          {navItems.map((item, index) => (
+          {routes.map((item) => (
             <ListItem key={item.label}>
-              <NavItem item={item} />
+              <SidebarNavItem item={item} />
             </ListItem>
-            )
+          )
           )}
         </List>
       </Box>

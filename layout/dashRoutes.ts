@@ -1,11 +1,11 @@
-import { NavItem } from "./types";
+import { NavItem } from "../components/Sidebar/types";
 import {
   FiHome,
   FiShoppingCart,
   FiSettings,
 } from 'react-icons/fi';
 
-export const navItems: NavItem[] = [
+export const dashRoutes: NavItem[] = [
   {
     type: 'link',
     href: '/',
