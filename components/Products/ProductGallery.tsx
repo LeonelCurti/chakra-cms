@@ -1,40 +1,51 @@
 import React from 'react'
-import { Box, Flex, Heading, Icon, Input, Text, useColorModeValue } from '@chakra-ui/react'
-
-import { FiImage } from 'react-icons/fi';
+import { Box, Flex, Icon, Text, useColorModeValue } from '@chakra-ui/react'
+import { useDropzone } from "react-dropzone";
+import { FiCamera, FiTrash2 } from 'react-icons/fi';
 
 const ProductGallery = () => {
-  const textColor = useColorModeValue("gray.700", "white");
+  const { getRootProps, getInputProps } = useDropzone();
+  const titleTextColor = useColorModeValue("gray.700", "white");
+  const bgImage = useColorModeValue("gray.50", "gray.700");
+  const IconColor = useColorModeValue("gray.600", "gray.800");
   return (
     <>
-      <Text fontSize='lg' color={textColor} fontWeight='bold' mb={2}>
-        Product Images
+      <Text fontSize='lg' color={titleTextColor} fontWeight='bold' mb={2}>
+        Images
       </Text>
-      <Flex justify={'space-evenly'} gap={5} py={6} wrap={'wrap'}>
+      <Flex justify={'space-evenly'} gap={4} py={6} wrap={'wrap'}>
         {
           [1, 2, 3, 4].map((el, i) => (
             <Box
+              position={'relative'}
               key={i}
-              p={5}
-              position="relative"
-              borderWidth={'1px'}
-              borderRadius={'md'}
+              bg={bgImage}
               borderStyle={'dashed'}
-
-            ><Input
-                type="file"
-                height="100%"
-                width="100%"
-                position="absolute"
-                top="0"
-                left="0"
-                opacity="0"
-                aria-hidden="true"
-                accept="image/*"
-                _hover={{ cursor: 'pointer' }}
-              />
-              <Flex justify={'center'} align={'center'}>
-                <Icon as={FiImage} boxSize={'16'} />
+              borderWidth={'2px'}
+              borderColor={'gray.500'}
+              cursor='pointer'
+              {...getRootProps({ className: "dropzone" })}
+            >
+              <Box
+                position='absolute'
+                right={'5px'}
+                top={'2px'}
+                onClick={(e) => {
+                  e.stopPropagation()
+                  alert(`Delete ${i + 1}º image `)
+                }}>
+                <Icon
+                  as={FiTrash2}
+                  _hover={{ color: 'red.500' }} />
+              </Box>
+              <input {...getInputProps()} />
+              <Flex p={6} role='group' >
+                <Icon
+                  as={FiCamera}
+                  minW='70px'
+                  minH='70px'
+                  color={IconColor}
+                  _groupHover={{ color: 'gray.900' }} />
               </Flex>
             </Box>
           ))
