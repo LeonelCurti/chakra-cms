@@ -27,7 +27,7 @@ const ProductTags = (props: Props) => {
     <>
       <Flex direction={'column'} gap={3} w='full'>
         <Text fontSize='lg' color={textColor} fontWeight='bold' mb={2}>
-          Product Tags
+          Tags
         </Text>
         <Input value={value} onChange={onChange} onKeyDown={handleKeyDown} placeholder={'Type '} />
 

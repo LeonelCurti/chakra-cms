@@ -28,7 +28,7 @@ const AddProduct = () => {
       <Box bg={bgMainColor}>
         <Container maxW='container.md'>
           <Heading size={{ base: 'lg', md: 'lg' }} >
-            Add new product
+            Add New Product
           </Heading>
 
           <Card
@@ -38,7 +38,7 @@ const AddProduct = () => {
           >
             <CardBody>
               <Text fontSize='lg' color={textColor} fontWeight='bold' mb={2}>
-                Product name and description
+                Name and Description
               </Text>
               <FormControl id="name">
                 <FormLabel fontWeight={'normal'}>Name</FormLabel>

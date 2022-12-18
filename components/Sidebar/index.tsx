@@ -1,8 +1,8 @@
 import React from 'react'
-import { Box, useDisclosure, useColorModeValue, Drawer, DrawerContent } from '@chakra-ui/react';
+import { Box, useDisclosure, Drawer, DrawerContent } from '@chakra-ui/react';
 import SidebarContent from './SidebarContent';
 import TopBar from './SidebarTopBar';
-import { NavItem } from './types';
+import {NavItem} from '../../layout/dashRoutes'
 
 type Props = {
   children: React.ReactNode,
