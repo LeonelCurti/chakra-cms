@@ -3,16 +3,11 @@ import { Heading, Icon, Text, HStack, Box, Link, useColorModeValue } from '@chak
 import { NavItem } from '../../layout/dashRoutes';
 import { useRouter } from 'next/router';
 
-type Props = {
-  item: NavItem;
-};
+const NavItem = ({ item }: { item: NavItem }) => {
+  const { pathname } = useRouter();
 
-const NavItem = ({ item }: Props) => {
-  const router = useRouter();
-  const { label, children, href, icon } = item;
-  const activePath = router.pathname
-
-  if (children) {
+  if ('children' in item) {
+    const { label, children } = item
     return (
       <>
         <Heading
@@ -31,7 +26,7 @@ const NavItem = ({ item }: Props) => {
           {
             children && (
               children.map((child) => (
-                <NextLink href={child.href ?? '#'} passHref key={child.label}>
+                <NextLink href={child.href} passHref key={child.label}>
                   <Link variant="unstyled" _hover={{
                     textDecoration: 'none',
                   }}>
@@ -51,7 +46,7 @@ const NavItem = ({ item }: Props) => {
                         height={5}
                         mr={4}
                         ml={4}
-                        color={activePath === child.href ? "blue.500" : ""}
+                        color={pathname === child.href ? "blue.500" : ""}
                         as={child.icon}
                       />
                       <Text
@@ -59,11 +54,11 @@ const NavItem = ({ item }: Props) => {
                         fontWeight="medium"
                         flex={1}
                         letterSpacing="wider"
-                        color={activePath === child.href ? "blue.500" : ""}
+                        color={pathname === child.href ? "blue.500" : ""}
                       >
                         {child.label}
                       </Text>
-                      {activePath === child.href && (
+                      {pathname === child.href && (
                         <Box width={1} height={6} bg="blue.500" />
                       )}
                     </HStack>
@@ -76,6 +71,7 @@ const NavItem = ({ item }: Props) => {
       </>
     );
   } else {
+    const { label, icon, href } = item
     return (
       <NextLink href={href ?? '#'} passHref key={label}>
         <Link variant="unstyled" _hover={{
@@ -97,7 +93,7 @@ const NavItem = ({ item }: Props) => {
               height={5}
               mr={4}
               ml={4}
-              color={activePath === item.href ? "blue.500" : ""}
+              color={pathname === item.href ? "blue.500" : ""}
               as={icon}
             />
             <Text
@@ -105,11 +101,11 @@ const NavItem = ({ item }: Props) => {
               fontWeight="medium"
               flex={1}
               letterSpacing="wider"
-              color={activePath === item.href ? "blue.500" : ""}
+              color={pathname === item.href ? "blue.500" : ""}
             >
               {label}
             </Text>
-            {activePath === item.href && (
+            {pathname === item.href && (
               <Box width={1} height={6} bg="blue.500" />
             )}
           </HStack>

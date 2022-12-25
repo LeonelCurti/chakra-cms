@@ -27,7 +27,7 @@ const AddProduct = () => {
     <AdminLayout>
       <Box bg={bgMainColor}>
         <Container maxW='container.md'>
-          <Heading size={{ base: 'lg', md: 'lg' }} >
+          <Heading size={{ base: 'lg', md: 'lg' }} pt={{base:'4',md:'6'}} >
             Add New Product
           </Heading>
 

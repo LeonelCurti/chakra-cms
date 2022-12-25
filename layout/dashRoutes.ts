@@ -9,12 +9,17 @@ import {
 import { BiCategory } from "react-icons/bi";
 import { IconType } from "react-icons/lib";
 
-export type NavItem = {
+export type SimpleNavItem = {
   label: string;
-  children?: Array<NavItem>;
-  href?: string;
-  icon?: IconType;
+  icon: IconType;
+  href: string;
 };
+export type CompoundNavItem = {
+  label: string;
+  children: SimpleNavItem[];
+};
+
+export type NavItem = SimpleNavItem | CompoundNavItem;
 
 export const dashRoutes: NavItem[] = [
   {
