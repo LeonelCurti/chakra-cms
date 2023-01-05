@@ -6,24 +6,15 @@ import {
   getPaginationRowModel,
   useReactTable,
 } from '@tanstack/react-table'
-import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Checkbox, Box, Tfoot, Text } from "@chakra-ui/react";
-import { data } from './dummyProducts';
+import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Box, Tfoot, Text } from "@chakra-ui/react";
+import { data } from './dummyCategories';
 import RowActions from './RowActions';
-import { Product } from './types';
+import { Category } from './types';
 import Pagination from './Pagination';
 
-const columnHelper = createColumnHelper<Product>()
+const columnHelper = createColumnHelper<Category>()
 
 const columns = [
-  columnHelper.display({
-    id: 'select',
-    header: ({ table }) => <Checkbox
-      isChecked={table.getIsAllRowsSelected()} isIndeterminate={table.getIsSomeRowsSelected()} onChange={table.getToggleAllRowsSelectedHandler()} />,
-    cell: ({ row }) => <Checkbox
-      isChecked={row.getIsSelected()}
-      isIndeterminate={row.getIsSomeSelected()}
-      onChange={row.getToggleSelectedHandler()} />,
-  }),
   columnHelper.display({
     id: 'image',
     header: () => 'Image',
@@ -33,15 +24,10 @@ const columns = [
     header: () => 'Name',
     cell: props => <>
       <Text>{props.renderValue()}</Text>
-      <Text fontSize='xs'>{`SKU: ${props.row.original.sku}`}</Text>
     </>
   }),
-  columnHelper.accessor('category', {
-    header: () => 'Category',
-    cell: info => info.renderValue(),
-  }),
-  columnHelper.accessor('price', {
-    header: () => 'Price',
+  columnHelper.accessor('slug', {
+    header: () => 'Slug',
     cell: info => info.renderValue(),
   }),
   columnHelper.display({
@@ -51,15 +37,10 @@ const columns = [
   }),
 ]
 
-const ProductsTable = () => {
-  const [rowSelection, setRowSelection] = React.useState({})
+const CategoriesTable = () => {
   const table = useReactTable({
     data,
     columns,
-    state: {
-      rowSelection,
-    },
-    onRowSelectionChange: setRowSelection,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
   })
@@ -97,7 +78,7 @@ const ProductsTable = () => {
         </Tbody>
         <Tfoot>
           <Tr>
-            <Th colSpan={6}>
+            <Th colSpan={4}>
               <Pagination table={table} />
             </Th>
           </Tr>
@@ -108,4 +89,4 @@ const ProductsTable = () => {
 }
 
 
-export default ProductsTable
+export default CategoriesTable
