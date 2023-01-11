@@ -1,15 +1,15 @@
 import type { NextPage } from 'next'
 import { Box } from '@chakra-ui/react'
-import AdminLayout from '../../layout/Admin'
+import AdminLayout from '../../../layout/Admin'
 
-const Settings: NextPage = () => {
+const General: NextPage = () => {
   return (
     <AdminLayout>
       <Box p="4">      
-          Settings          
+          General         
       </Box>
     </AdminLayout>
   )
 }
 
-export default Settings
+export default General

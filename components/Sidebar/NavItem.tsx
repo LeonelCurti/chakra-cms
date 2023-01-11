@@ -1,6 +1,6 @@
 import NextLink from 'next/link';
 import { Heading, Icon, Text, HStack, Box, Link, useColorModeValue } from '@chakra-ui/react';
-import { NavItem } from '../../layout/dashRoutes';
+import { NavItem } from '../../layout/adminRoutes';
 import { useRouter } from 'next/router';
 
 const NavItem = ({ item }: { item: NavItem }) => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import Sidebar from '../components/Sidebar'
-import { dashRoutes } from './dashRoutes';
+import { dashRoutes } from './adminRoutes';
 
 
 const Admin = ({ children }: { children: React.ReactNode }) => {

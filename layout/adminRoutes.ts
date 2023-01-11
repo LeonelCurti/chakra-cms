@@ -2,7 +2,6 @@ import {
   FiHome,
   FiSettings,
   FiActivity,
-  FiTag,
   FiPlus,
   FiList,
 } from "react-icons/fi";
@@ -28,9 +27,9 @@ export const dashRoutes: NavItem[] = [
     href: "/",
   },
   {
-    label: "Statistics",
+    label: "Analytics",
     icon: FiActivity,
-    href: "/admin/statistics",
+    href: "/admin/analytics",
   },
   {
     label: "Products",
@@ -50,16 +49,16 @@ export const dashRoutes: NavItem[] = [
         icon: BiCategory,
         href: "/admin/products/categories",
       },
-      {
-        label: "Tags",
-        icon: FiTag,
-        href: "/admin/products/tags",
-      },
     ],
   },
   {
     label: "Settings",
-    icon: FiSettings,
-    href: "/admin/settings",
+    children: [
+      {
+        label: "General",
+        icon: FiSettings,
+        href: "/admin/settings/general",
+      },
+    ],
   },
 ];
