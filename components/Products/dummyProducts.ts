@@ -6,90 +6,105 @@ export const data: Product[] = [
     name:'iPhone 9',
     sku: "5464",
     category: "smartphones",
-    price: 26
+    price: 26,
+    slug:'iphone-9'
   },
   {
-    name:'iPhone 9',
+    name:'iPhone 8',
     sku: "1478",
     category: "silicon",
-    price: 47
+    price: 47,
+    slug:'iphone-8'
   },
   {
-    name:'iPhone 9',
+    name:'core i9',
     sku: "9514",
     category: "pencil",
-    price: 96
+    price: 96,
+    slug:'core-i9'
   },
   { 
-    name:'iPhone 9',   
+    name:'mouse microsoft',   
     sku: "5464",
     category: "apple",
-    price: 26
+    price: 26,
+    slug:'mouse-microsoft'
   },
   {
-    name:'iPhone 9',
+    name:'samsung s23',
     sku: "1478",
     category: "silicon",
-    price: 47
+    price: 47,
+    slug:'samsung-s23'
   },
   {
-    name:'iPhone 9',
+    name:'apple power adapter',
     sku: "9514",
     category: "pencil",
-    price: 96
+    price: 96,
+    slug:'apple-power-adapter',
   },
   {  
-    name:'iPhone 9',  
+    name:'streaming stick',  
     sku: "5464",
     category: "apple",
-    price: 26
+    price: 26,
+    slug:'streaming-stick'
   },
   {
-    name:'iPhone 9',
+    name:'nintendo switch',
     sku: "1478",
     category: "silicon",
-    price: 47
+    price: 47,
+    slug:'nintendo-switch'
   },
   {
-    name:'iPhone 9',
+    name:'wireless keyboard',
     sku: "9514",
     category: "pencil",
-    price: 96
+    price: 96,
+    slug:'wireless-keyboard'
   },
   {    
-    name:'iPhone 9',
+    name:'external hard drive',
     sku: "5464",
     category: "apple",
-    price: 26
+    price: 26,
+    slug:'exernal-hard-drive'
   },
   {
-    name:'iPhone 9',
+    name:'fitness tracker',
     sku: "1478",
     category: "silicon",
-    price: 47
+    price: 47,
+    slug:'fitness-tracker'
   },
   {
-    name:'iPhone 9',
+    name:'portable ssd',
     sku: "9514",
     category: "pencil",
-    price: 96
+    price: 96,
+    slug:'portable-ssd'
   },
   {   
-    name:'iPhone 9', 
+    name:'indoor camera', 
     sku: "5464",
     category: "apple",
-    price: 26
+    price: 26,
+    slug:'indoor-camera'
   },
   {
-    name:'iPhone 9',
+    name:'hdmi cable',
     sku: "1478",
     category: "silicon",
-    price: 47
+    price: 47,
+    slug:'hdmi-cable'
   },
   {
-    name:'iPhone 9',
+    name:'wireless controller',
     sku: "9514",
     category: "pencil",
-    price: 96
+    price: 96,
+    slug:'wireless-controller'
   },
 ];

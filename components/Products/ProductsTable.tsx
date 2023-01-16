@@ -6,12 +6,12 @@ import {
   getPaginationRowModel,
   useReactTable,
 } from '@tanstack/react-table'
-import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Checkbox, Box, Tfoot, Text } from "@chakra-ui/react";
+import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Checkbox, Box, Tfoot, Text, Link } from "@chakra-ui/react";
 import { data } from './dummyProducts';
 import RowActions from './RowActions';
 import { Product } from './types';
 import Pagination from './Pagination';
-
+import NextLink from "next/link"
 const columnHelper = createColumnHelper<Product>()
 
 const columns = [
@@ -32,7 +32,11 @@ const columns = [
   columnHelper.accessor('name', {
     header: () => 'Name',
     cell: props => <>
-      <Text>{props.renderValue()}</Text>
+      <NextLink 
+        href={`/admin/products/${props.row.original.sku}`} passHref
+        >
+        <Link>{props.renderValue()}</Link>
+      </NextLink>
       <Text fontSize='xs'>{`SKU: ${props.row.original.sku}`}</Text>
     </>
   }),
@@ -47,7 +51,7 @@ const columns = [
   columnHelper.display({
     id: 'actions',
     header: () => 'Actions',
-    cell: () => <RowActions />
+    cell: (props) => <RowActions product={props.row.original} />
   }),
 ]
 
