@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, BoxProps, CloseButton, Flex, IconButton, List, ListItem, Text, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import NavItem from './NavItem';
 import { FiMoon, FiSun } from 'react-icons/fi';
-import { NavItem as NavItemType } from '../../layout/adminRoutes'
+import { NavItem as NavItemType } from '../Layout/Admin/navList'
 
 interface Props extends BoxProps {
   onClose: () => void;

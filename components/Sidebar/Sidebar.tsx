@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, useDisclosure, Drawer, DrawerContent } from '@chakra-ui/react';
 import SidebarContent from './SidebarContent';
 import TopBar from './SidebarTopBar';
-import {NavItem} from '../../layout/adminRoutes'
+import {NavItem} from '../Layout/Admin/navList'
 
 type Props = {
   children: React.ReactNode,

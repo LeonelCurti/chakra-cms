@@ -5,7 +5,7 @@ import { FiTrash2, FiExternalLink } from 'react-icons/fi'
 import ProductCategories from '../../../components/Products/ProductCategories'
 import ProductGallery from '../../../components/Products/ProductGallery'
 import ProductTags from '../../../components/Products/ProductTags'
-import AdminLayout from '../../../layout/Admin'
+import AdminLayout from '../../../components/Layout/Admin'
 
 const EditProduct = () => {
   const router = useRouter();

@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import { Box, Card, CardBody, Container, Flex, Heading, useColorModeValue } from '@chakra-ui/react'
-import AdminLayout from '../../../layout/Admin'
-import CategoriesTable from '../../../components/Products/CategoriesTable'
+import AdminLayout from '../../../components/Layout/Admin'
+import CategoriesTable from '../../../components/Tables/CategoriesTable'
 import SearchInput from '../../../components/Products/SearchInput'
 import AddCategoryButton from '../../../components/Products/AddCategoryButton'
 

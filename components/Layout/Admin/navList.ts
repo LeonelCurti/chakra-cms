@@ -20,7 +20,7 @@ export type CompoundNavItem = {
 
 export type NavItem = SimpleNavItem | CompoundNavItem;
 
-export const dashRoutes: NavItem[] = [
+export const navItems: NavItem[] = [
   {
     label: "Home",
     icon: FiHome,

@@ -7,9 +7,9 @@ import {
   useReactTable,
 } from '@tanstack/react-table'
 import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Checkbox, Box, Tfoot, Text, Link } from "@chakra-ui/react";
-import { data } from './dummyProducts';
-import RowActions from './RowActions';
-import { Product } from './types';
+import { data } from '../../Utils/dummyProducts';
+import RowActions from './ProductActionsRow';
+import { Product } from '../Products/types';
 import Pagination from './Pagination';
 import NextLink from "next/link"
 const columnHelper = createColumnHelper<Product>()

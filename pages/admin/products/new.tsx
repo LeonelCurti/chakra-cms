@@ -1,7 +1,7 @@
 import { Box, Button, Card, CardBody, Container, Flex, FormControl, FormLabel, Heading, Input, SimpleGrid, Switch, Text, Textarea, useColorModeValue } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import ProductGallery from '../../../components/Products/ProductGallery';
-import AdminLayout from '../../../layout/Admin';
+import AdminLayout from '../../../components/Layout/Admin';
 import ProductTags from '../../../components/Products/ProductTags';
 import ProductCategories from '../../../components/Products/ProductCategories';
 

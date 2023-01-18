@@ -2,33 +2,23 @@ import { HStack, IconButton, Tooltip } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import React from 'react'
 import { FiEdit, FiEye, FiTrash } from 'react-icons/fi'
-import { Product } from './types'
+import { Product } from '../Products/types'
 
-const RowActions = ({ product }: { product: Product }) => {
+const CategoryActionsRow = () => {
   const router = useRouter()
 
   const handleDelete = () => {
-    alert(`Deleting poduct ${product.name}`)
+    alert(`Delete poduct category`)
   }
   const handleEdit = () => {
-    router.push(`/admin/products/${product.sku}`)
+    alert(`Edit poduct category`)
   }
   const handleView = () => {
-    router.push(`/products/${product.slug}`)
+    alert(`View poduct category`)
   }
 
   return (
     <HStack w={'full'} justify={'center'}>
-      <Tooltip label='Delete' hasArrow>
-        <span>
-          <IconButton
-            variant="outline"
-            aria-label="delete"
-            onClick={handleDelete}
-            icon={<FiTrash />}
-          />
-        </span>
-      </Tooltip>
       <Tooltip label='Edit' hasArrow>
         <span>
           <IconButton
@@ -49,8 +39,18 @@ const RowActions = ({ product }: { product: Product }) => {
           />
         </span>
       </Tooltip>
+      <Tooltip label='Delete' hasArrow>
+        <span>
+          <IconButton
+            variant="outline"
+            aria-label="delete"
+            onClick={handleDelete}
+            icon={<FiTrash />}
+          />
+        </span>
+      </Tooltip>
     </HStack>
   )
 }
 
-export default RowActions
+export default CategoryActionsRow
