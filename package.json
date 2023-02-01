@@ -12,6 +12,7 @@
     "@chakra-ui/react": "^2.4.3",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
+    "@fontsource/roboto": "^4.5.8",
     "@tanstack/react-table": "^8.5.22",
     "framer-motion": "^7.5.4",
     "next": "12.3.1",

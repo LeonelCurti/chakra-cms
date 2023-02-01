@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
-import { Box, Button, Card, CardBody, Container, Flex, Heading, HStack, Input, InputGroup, InputRightElement, Select, Stack, Text, useColorModeValue } from '@chakra-ui/react'
-import { FiPlus, FiSearch } from 'react-icons/fi'
+import { Box, Button, Card, CardBody, Container, Flex, Heading, HStack, Select, Stack, Text, useColorModeValue } from '@chakra-ui/react'
+import { FiPlus } from 'react-icons/fi'
 import ProductsTable from '../../../components/Tables/ProductsTable'
 import { useRouter } from 'next/router'
 import AdminLayout from '../../../components/Layout/Admin'
