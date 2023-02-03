@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
 import { Box, Button, Card, CardBody, Container, Flex, Heading, HStack, Select, Stack, Text, useColorModeValue } from '@chakra-ui/react'
 import { FiPlus } from 'react-icons/fi'
-import ProductsTable from '../../../components/Tables/ProductsTable'
+import { ProductsTable } from '../../../components/tables'
 import { useRouter } from 'next/router'
-import AdminLayout from '../../../components/Layout/Admin'
-import SearchInput from '../../../components/Products/SearchInput'
+import { Admin as AdminLayout } from '../../../components/layout'
+import { SearchInput } from '../../../components/inputs'
 
 const Products: NextPage = () => {
   const router = useRouter()

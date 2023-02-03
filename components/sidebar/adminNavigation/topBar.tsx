@@ -5,7 +5,8 @@ import { FiMenu } from 'react-icons/fi';
 interface TopBarProps extends FlexProps {
   onOpen: () => void;
 }
-const TopBar = ({ onOpen }: TopBarProps) => {
+
+export const TopBar = ({ onOpen }: TopBarProps) => {
    return (
     <HStack
       ml={{ base: 0, md: 60 }}
@@ -30,5 +31,3 @@ const TopBar = ({ onOpen }: TopBarProps) => {
     </HStack>
   )
 }
-
-export default TopBar

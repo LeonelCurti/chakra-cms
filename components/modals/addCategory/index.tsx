@@ -1,17 +1,13 @@
-import { Button, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Select, Stack, Textarea, useDisclosure } from '@chakra-ui/react'
 import React from 'react'
-import { FiPlus } from 'react-icons/fi'
+import { Button, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Select, Stack, Textarea } from '@chakra-ui/react'
 
-const AddCategoryButton = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  return (
-    <>
-      <Button
-        colorScheme={'blue'}
-        leftIcon={<FiPlus />}
-        onClick={onOpen}>
-        Add New
-      </Button>
+type AddCategorySidebarProps = {
+  isOpen: boolean,
+  onClose: () => void
+}
+
+export const AddCategory = ({ isOpen, onClose }: AddCategorySidebarProps) => {
+    return (
       <Modal isCentered isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
@@ -45,8 +41,5 @@ const AddCategoryButton = () => {
           </ModalFooter>
         </ModalContent>
       </Modal>
-    </>
-  )
-}
-
-export default AddCategoryButton
+    )
+  }

@@ -2,9 +2,9 @@ import { HStack, IconButton, Tooltip } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import React from 'react'
 import { FiEdit, FiEye, FiTrash } from 'react-icons/fi'
-import { Product } from '../Products/types'
+import { Product } from '../../../types'
 
-const ProductActionsRow = ({ product }: { product: Product }) => {
+export const ActionsRow = ({ product }: { product: Product }) => {
   const router = useRouter()
 
   const handleDelete = () => {
@@ -52,5 +52,3 @@ const ProductActionsRow = ({ product }: { product: Product }) => {
     </HStack>
   )
 }
-
-export default ProductActionsRow

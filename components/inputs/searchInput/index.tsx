@@ -7,7 +7,7 @@ type Props = {
   onSearch: () => void
 }
 
-const SearchInput = (props: Props) => {
+export const SearchInput = (props: Props) => {
   return (
     <InputGroup  >
       <Input

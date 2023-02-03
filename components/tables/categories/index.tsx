@@ -6,24 +6,15 @@ import {
   getPaginationRowModel,
   useReactTable,
 } from '@tanstack/react-table'
-import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Checkbox, Box, Tfoot, Text, Link } from "@chakra-ui/react";
-import { data } from '../../Utils/dummyProducts';
-import RowActions from './ProductActionsRow';
-import { Product } from '../Products/types';
-import Pagination from './Pagination';
-import NextLink from "next/link"
-const columnHelper = createColumnHelper<Product>()
+import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Box, Tfoot, Text } from "@chakra-ui/react";
+import { data } from '../../../utils/dummyCategories';
+import { ActionsRow } from './actionsRow';
+import { Category } from '../../../types/types';
+import { Pagination } from '../pagination';
+
+const columnHelper = createColumnHelper<Category>()
 
 const columns = [
-  columnHelper.display({
-    id: 'select',
-    header: ({ table }) => <Checkbox
-      isChecked={table.getIsAllRowsSelected()} isIndeterminate={table.getIsSomeRowsSelected()} onChange={table.getToggleAllRowsSelectedHandler()} />,
-    cell: ({ row }) => <Checkbox
-      isChecked={row.getIsSelected()}
-      isIndeterminate={row.getIsSomeSelected()}
-      onChange={row.getToggleSelectedHandler()} />,
-  }),
   columnHelper.display({
     id: 'image',
     header: () => 'Image',
@@ -32,38 +23,24 @@ const columns = [
   columnHelper.accessor('name', {
     header: () => 'Name',
     cell: props => <>
-      <NextLink 
-        href={`/admin/products/${props.row.original.sku}`} passHref
-        >
-        <Link>{props.renderValue()}</Link>
-      </NextLink>
-      <Text fontSize='xs'>{`SKU: ${props.row.original.sku}`}</Text>
+      <Text>{props.renderValue()}</Text>
     </>
   }),
-  columnHelper.accessor('category', {
-    header: () => 'Category',
-    cell: info => info.renderValue(),
-  }),
-  columnHelper.accessor('price', {
-    header: () => 'Price',
+  columnHelper.accessor('slug', {
+    header: () => 'Slug',
     cell: info => info.renderValue(),
   }),
   columnHelper.display({
     id: 'actions',
     header: () => 'Actions',
-    cell: (props) => <RowActions product={props.row.original} />
+    cell: () => <ActionsRow />
   }),
 ]
 
-const ProductsTable = () => {
-  const [rowSelection, setRowSelection] = React.useState({})
+export const CategoriesTable = () => {
   const table = useReactTable({
     data,
     columns,
-    state: {
-      rowSelection,
-    },
-    onRowSelectionChange: setRowSelection,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
   })
@@ -101,7 +78,7 @@ const ProductsTable = () => {
         </Tbody>
         <Tfoot>
           <Tr>
-            <Th colSpan={6}>
+            <Th colSpan={4}>
               <Pagination table={table} />
             </Th>
           </Tr>
@@ -110,6 +87,3 @@ const ProductsTable = () => {
     </TableContainer>
   )
 }
-
-
-export default ProductsTable

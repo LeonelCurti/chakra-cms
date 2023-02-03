@@ -2,9 +2,9 @@ import React from 'react'
 import { Table } from '@tanstack/react-table'
 import { HStack, IconButton, Select, Text } from '@chakra-ui/react'
 import { FiChevronLeft, FiChevronRight, FiChevronsLeft, FiChevronsRight } from 'react-icons/fi'
-import { Category, Product } from '../Products/types'
+import { Category, Product } from '../../../types'
 
-const Pagination = ({ table }: { table: Table<Product> | Table<Category> }) => {
+export const Pagination = ({ table }: { table: Table<Product> | Table<Category> }) => {
   return (
     <HStack gap={2} justify={'flex-end'}>
       <IconButton
@@ -53,5 +53,3 @@ const Pagination = ({ table }: { table: Table<Product> | Table<Category> }) => {
     </HStack>
   )
 }
-
-export default Pagination

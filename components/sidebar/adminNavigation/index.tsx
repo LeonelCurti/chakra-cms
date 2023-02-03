@@ -1,15 +1,15 @@
 import React from 'react'
 import { Box, useDisclosure, Drawer, DrawerContent } from '@chakra-ui/react';
-import SidebarContent from './SidebarContent';
-import TopBar from './SidebarTopBar';
-import {NavItem} from '../Layout/Admin/navList'
+import { Content } from './content';
+import { TopBar } from './topBar';
+import { NavItem } from '../../layout/admin/types'
 
 type Props = {
   children: React.ReactNode,
   routes: NavItem[]
 };
 
-const Sidebar = ({ routes, children }: Props) => {
+export const AdminNavigation= ({ routes, children }: Props) => {
   const { isOpen, onClose, onOpen } = useDisclosure()
   return (
     <Box
@@ -18,7 +18,7 @@ const Sidebar = ({ routes, children }: Props) => {
     >
       {/* fixed sidebar for desktop */}
       <Box display={{ base: 'none', md: 'block' }} >
-        <SidebarContent
+        <Content
           routes={routes}
           onClose={() => onClose()}
         />
@@ -34,7 +34,7 @@ const Sidebar = ({ routes, children }: Props) => {
         size="xs"
       >
         <DrawerContent>
-          <SidebarContent
+          <Content
             routes={routes}
             onClose={() => onClose()}
           />
@@ -47,5 +47,3 @@ const Sidebar = ({ routes, children }: Props) => {
     </Box>
   )
 }
-
-export default Sidebar

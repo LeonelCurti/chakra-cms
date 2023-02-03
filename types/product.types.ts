@@ -5,9 +5,3 @@ export type Product = {
   price: number;
   slug:string
 };
-
-export type Category = {
-  name: string;
-  slug: string;
-  description: string;
-};

@@ -1,11 +1,11 @@
-import { Box, Button, Card, CardBody, Container, Flex, FormControl, FormLabel, Heading, HStack, Input, Stack, Switch, Text, Textarea, useColorModeValue } from '@chakra-ui/react'
-import { useRouter } from 'next/router'
 import React, { useState } from 'react'
+import { useRouter } from 'next/router'
+import { Box, Button, Card, CardBody, Container, Flex, FormControl, FormLabel, Heading, HStack, Input, Stack, Switch, Text, Textarea, useColorModeValue } from '@chakra-ui/react'
 import { FiTrash2, FiExternalLink } from 'react-icons/fi'
-import ProductCategories from '../../../components/Products/ProductCategories'
-import ProductGallery from '../../../components/Products/ProductGallery'
-import ProductTags from '../../../components/Products/ProductTags'
-import AdminLayout from '../../../components/Layout/Admin'
+import ProductCategories from '../../../components/products/ProductCategories'
+import ProductGallery from '../../../components/products/ProductGallery'
+import ProductTags from '../../../components/products/ProductTags'
+import { Admin as AdminLayout } from '../../../components/layout'
 
 const EditProduct = () => {
   const router = useRouter();

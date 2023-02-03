@@ -1,13 +1,13 @@
-import { Box, Button, Container, Flex, Heading, HStack, Image, List, ListItem, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, SimpleGrid, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, VStack } from '@chakra-ui/react'
 import React, { useState } from 'react'
+import { Button, Flex, Heading, HStack, Image, List, ListItem, NumberDecrementStepper, NumberIncrementStepper, NumberInput, NumberInputField, NumberInputStepper, SimpleGrid, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from '@chakra-ui/react'
 import { FiHeart, FiMail, FiSend } from 'react-icons/fi'
-import Breadcrum from '../../components/Breadcrum/Breadcrum'
-import UserLayout from '../../components/Layout/UserLayout/UserLayout'
+import { Breadcrum } from '../../components/breadcrum'
+import { PublicUser } from '../../components/layout'
 
 const ProductDetail = () => {
   const [selected, setSelected] = useState(1)
   return (
-    <UserLayout>
+    <PublicUser>
       <SimpleGrid
         columns={{ base: 1, md: 2 }}
         spacing={{ base: 8, md: 10 }}
@@ -160,7 +160,7 @@ const ProductDetail = () => {
           </TabPanel>
         </TabPanels>
       </Tabs>
-    </UserLayout>
+    </PublicUser>
   )
 }
 

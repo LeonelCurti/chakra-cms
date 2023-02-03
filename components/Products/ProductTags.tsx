@@ -1,13 +1,13 @@
 import { Flex, Input, InputProps, Tag, TagCloseButton, TagLabel, Text, useColorModeValue, Wrap, WrapItem } from '@chakra-ui/react'
 import React, { KeyboardEvent, useState } from 'react'
 
-export type Props = InputProps & {
+type ProductTagsProps = InputProps & {
   tags: string[]
   onTagsChange(tags: string[]): void
   onTagRemove(index: number): void
 }
 
-const ProductTags = (props: Props) => {
+const ProductTags = (props: ProductTagsProps) => {
   const { tags = [], onTagsChange, onTagRemove } = props
   const [value, setValue] = useState('');
   const textColor = useColorModeValue("gray.700", "white");

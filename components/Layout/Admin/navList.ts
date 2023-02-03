@@ -1,24 +1,6 @@
-import {
-  FiHome,
-  FiSettings,
-  FiActivity,
-  FiPlus,
-  FiList,
-} from "react-icons/fi";
+import { FiHome, FiSettings, FiActivity, FiPlus, FiList } from "react-icons/fi";
 import { BiCategory } from "react-icons/bi";
-import { IconType } from "react-icons/lib";
-
-export type SimpleNavItem = {
-  label: string;
-  icon: IconType;
-  href: string;
-};
-export type CompoundNavItem = {
-  label: string;
-  children: SimpleNavItem[];
-};
-
-export type NavItem = SimpleNavItem | CompoundNavItem;
+import { NavItem } from "./types";
 
 export const navItems: NavItem[] = [
   {

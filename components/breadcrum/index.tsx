@@ -2,7 +2,7 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react'
 import React from 'react'
 import { FiChevronRight } from 'react-icons/fi'
 
-const Breadcrum = () => {
+export const Breadcrum = () => {
   return (
     <Breadcrumb      
       spacing='8px'
@@ -23,5 +23,3 @@ const Breadcrum = () => {
     </Breadcrumb>
   )
 }
-
-export default Breadcrum

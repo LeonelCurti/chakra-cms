@@ -1,12 +1,12 @@
 import type { NextPage } from 'next'
 import { Box } from '@chakra-ui/react'
-import AdminLayout from '../../components/Layout/Admin'
+import { Admin as AdminLayout } from '../../components/layout'
 
 const Analytics: NextPage = () => {
   return (
     <AdminLayout>
-      <Box p="4">      
-          Analytics          
+      <Box p="4">
+        Analytics
       </Box>
     </AdminLayout>
   )

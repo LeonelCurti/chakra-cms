@@ -1,11 +1,9 @@
 import React from 'react'
-import Sidebar from '../../Sidebar/Sidebar'
+import { AdminNavigation } from '../../sidebar'
 import { navItems } from './navList';
 
-const Admin = ({ children }: { children: React.ReactNode }) => {
+export const Admin = ({ children }: { children: React.ReactNode }) => {
   return (
-    <Sidebar routes={navItems}>{children}</Sidebar>
+    <AdminNavigation routes={navItems}>{children}</AdminNavigation>
   )
 }
-
-export default Admin
