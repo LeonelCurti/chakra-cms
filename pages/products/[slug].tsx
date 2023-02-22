@@ -30,7 +30,11 @@ const ProductDetail = () => {
             </Heading>
           </Box>
 
-          <Box flex={1}>
+          <Box 
+          flexGrow={1} 
+          flexBasis={0} 
+          minW={0}
+          >
             <ProdDetailPhotosGallery />
           </Box>
 
