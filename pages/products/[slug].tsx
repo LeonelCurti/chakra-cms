@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Box, Button, Container, Flex, Heading, HStack, List, ListItem, Select, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from '@chakra-ui/react'
+import { Box, Button, Container, Flex, Heading, HStack, List, ListItem, Select, SimpleGrid, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from '@chakra-ui/react'
 import { Breadcrum } from '../../components/breadcrum'
 import { PublicUser } from '../../components/layout'
 import { ProdDetailPhotosGallery } from '../../components/products/prodDetailPhotosGallery'
@@ -17,24 +17,19 @@ const ProductDetail = () => {
   return (
     <PublicUser>
       <Container maxW={'container.lg'}>
-        <Flex
-          direction={{ base: 'column', md: 'row' }}
-          gap={{ base: 1, md: 8 }}
+        <SimpleGrid
+          columns={{ base: 1, md: 2 }}
+          spacing={10}
           py={{ base: 4, md: 8 }}
         >
-          <Box display={{ base: 'block', md: 'none' }}>
-            <Breadcrum pb={3} />
-            <Heading
-              fontSize={{ base: 'lg', sm: 'xl' }} pb={2}>
-              Top Slip On Velcro Sneakers
-            </Heading>
-          </Box>
-
-          <Box 
-          flexGrow={1} 
-          flexBasis={0} 
-          minW={0}
-          >
+          <Box>
+            <Box display={{ base: 'block', md: 'none' }}>
+              <Breadcrum pb={3} />
+              <Heading
+                fontSize={{ base: 'lg', sm: 'xl' }} pb={2}>
+                Top Slip On Velcro Sneakers
+              </Heading>
+            </Box>
             <ProdDetailPhotosGallery />
           </Box>
 
@@ -105,7 +100,7 @@ const ProductDetail = () => {
             </Flex>
 
           </Stack>
-        </Flex>
+        </SimpleGrid>
 
 
         <Tabs align='center' variant={'enclosed'} isFitted py={4}>

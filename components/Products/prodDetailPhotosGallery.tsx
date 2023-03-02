@@ -1,4 +1,4 @@
-import { Box, Flex, HStack, IconButton, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Tag, useDisclosure, useMediaQuery } from '@chakra-ui/react'
+import { Box, IconButton, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Tag, useDisclosure, useMediaQuery } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { AnimatePresence, motion, MotionConfig, PanInfo } from 'framer-motion'
@@ -9,9 +9,6 @@ const randomImages = [
   'https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
   'https://images.unsplash.com/photo-1613336026275-d6d473084e85?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
   'https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
-
- 
-
 ]
 
 const variants = {
@@ -79,15 +76,13 @@ export const ProdDetailPhotosGallery = () => {
     }
   }
 
-
   return (
-    <MotionConfig
-      transition={{
-        x: { type: 'spring', stiffness: 300, damping: 30 },
-        opacity: { duration: 0.3 }
-      }}
-    >
-      <Flex flexDir={'column'} >
+    <>
+      <MotionConfig
+        transition={{
+          x: { type: 'spring', stiffness: 300, damping: 30 },
+          opacity: { duration: 0.3 }
+        }}>
         <AnimatePresence initial={false} custom={direction}>
           <Box
             w={'full'}
@@ -116,10 +111,13 @@ export const ProdDetailPhotosGallery = () => {
                 width="100%"
                 height="100%"
                 objectFit='cover'
+                sizes="(min-width: 48em) 50vw,
+                          100vw"
                 priority
               />
             </Box>
-            {/* Current image index indicator only on mobile */}
+
+            {/* Current image index indicator, only on mobile */}
             <Box
               display={{ base: 'block', sm: 'none' }}
               position='absolute'
@@ -129,6 +127,7 @@ export const ProdDetailPhotosGallery = () => {
             >
               <Tag letterSpacing={'2px'} rounded={'xl'}>{`${curIndex + 1}/${randomImages.length}`}</Tag>
             </Box>
+
             {/* Zoom icon button */}
             <IconButton
               position='absolute'
@@ -141,60 +140,67 @@ export const ProdDetailPhotosGallery = () => {
             />
           </Box>
         </AnimatePresence>
+      </MotionConfig>
 
-        <Modal size={'full'} isOpen={isOpen} onClose={onClose} scrollBehavior={'inside'} >
-          <ModalOverlay />
-          <ModalContent h={'full'}>
-            <ModalHeader>Modal Title</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody  >
-              <Box h={'full'}>
-                <Image
-                  alt={'product image'}
-                  src={randomImages[curIndex]}
-                  layout="responsive"
-                  width={'100%'}
-                  height={'100%'}
-                  objectFit='contain'
-                />
-              </Box>
-            </ModalBody>
-          </ModalContent>
-        </Modal>
+      {/* Thumbs gallery */}
+      <Box
+        display={{ base: 'none', sm: 'flex' }}
+        p={3}
+        gap={2}
+        justifyContent={'center'}
+        overflowX={'auto'}
+      >
+        {
+          randomImages.map((item, index) => (
+            <Box
+              key={index}
+              cursor={'pointer'}
+              onClick={() => changePhotoIndex(index)}
+              border={curIndex === index ? '1px solid' : 'none'}
+              w={'100px'}
+              opacity={curIndex === index ? '1' : '0.8'}
+            >
+              <Image
+                alt={'Thumbnail image'}
+                src={item}
+                layout="responsive"
+                width={100}
+                height={100}
+                sizes="30vw"
+                objectFit='cover'
+              />
+            </Box>
+          ))
+        }
+      </Box>
 
-        {/* Thumbs gallery */}
-        <Box
-          p={3}
-          gap={2}
-          display={{ base: 'none', sm: 'flex' }}    
-          justifyContent={'center'}
-          overflowX={'auto'}
-        >
-          {
-            randomImages.map((item, index) => (
-              <Box
-                key={index}
-                cursor={'pointer'}
-                onClick={() => changePhotoIndex(index)}
-                outline={curIndex === index ? '1px solid' : 'none'}
-                w={'100px'}
-                flexShrink={0}
-                opacity={curIndex === index ? '1' : '0.8'}
-              >
-                <Image
-                  alt={'product image'}
-                  src={item}
-                  layout="responsive"
-                  width="100"
-                  height="100"
-                  objectFit='cover'
-                />
-
-              </Box>
-            ))
-          }
-        </Box>
-      </Flex>
-    </MotionConfig>
+      <Modal
+        allowPinchZoom
+        size={'4xl'}
+        isCentered
+        isOpen={isOpen}
+        onClose={onClose} >
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Modal Title</ModalHeader>
+          <ModalCloseButton size={'md'} />
+          <ModalBody px={0}>
+            <Box
+              position='relative'
+              h={'70vh'}
+            >
+              <Image
+                alt={'product image'}
+                src={randomImages[curIndex]}
+                layout="fill"
+                objectFit='contain'
+              />
+            </Box>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+    </>
   )
 }
+
+
