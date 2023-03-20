@@ -34,7 +34,7 @@ const Products: NextPage = () => {
             <CardBody>
               <SearchInput
                 placeHolder='Find product by name or SKU'
-                onSearch={() => { }}
+                onSearch={() => alert('search')}
               />
             </CardBody>
           </Card>

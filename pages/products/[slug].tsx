@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Box, Button, Container, Flex, Heading, HStack, List, ListItem, Select, SimpleGrid, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from '@chakra-ui/react'
-import { Breadcrum } from '../../components/breadcrum'
-import { PublicUser } from '../../components/layout'
-import { ProdDetailPhotosGallery } from '../../components/products/prodDetailPhotosGallery'
 import { FiHeart, FiMail, FiSend } from 'react-icons/fi'
+import { Breadcrum } from '../../components/breadcrum'
+import { Public as PublicLayout } from '../../components/layout'
+import { ProdDetailPhotosGallery } from '../../components/products/prodDetailPhotosGallery'
 
 
 const ProductDetail = () => {
@@ -15,7 +15,7 @@ const ProductDetail = () => {
 
 
   return (
-    <PublicUser>
+    <PublicLayout>
       <Container maxW={'container.lg'}>
         <SimpleGrid
           columns={{ base: 1, md: 2 }}
@@ -176,7 +176,7 @@ const ProductDetail = () => {
           </TabPanels>
         </Tabs>
       </Container>
-    </PublicUser>
+    </PublicLayout>
   )
 }
 

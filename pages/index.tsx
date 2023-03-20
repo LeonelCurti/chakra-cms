@@ -1,14 +1,17 @@
 import type { NextPage } from 'next'
-import { Box } from '@chakra-ui/react'
-import { Admin as AdminLayout } from './../components/layout'
+import { TopBar } from '../components/topBar'
+import { Navbar } from '../components/navigation';
+import { FooterPublic as Footer } from '../components/footer';
 
-const Home: NextPage = () => {  
+const Home: NextPage = () => {
   return (
-    <AdminLayout>
-      <Box p="4">      
-          Home page           
-      </Box>
-    </AdminLayout>
+    <>
+      <TopBar />
+      <Navbar />
+      Home Page
+      <Footer />
+    </>
+
   )
 }
 

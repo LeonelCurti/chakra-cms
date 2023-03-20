@@ -1,2 +1,2 @@
-export * from './publicUser'
+export * from './public'
 export * from './admin'
