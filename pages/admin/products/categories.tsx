@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
 import { Box, Button, Card, CardBody, Container, Flex, Heading, useColorModeValue, useDisclosure } from '@chakra-ui/react'
-import { Admin as AdminLayout } from '../../../components/layout'
+import { FiPlus } from 'react-icons/fi'
+import { AdminLayout } from '../../../components/layout'
 import { CategoriesTable } from '../../../components/tables'
 import { SearchInput } from '../../../components/inputs'
 import { AddCategory } from '../../../components/modals/addCategory'
-import { FiPlus } from 'react-icons/fi'
 
 const Categories: NextPage = () => {
   const bgMainColor = useColorModeValue('gray.50', 'gray.800')

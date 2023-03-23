@@ -1,9 +1,9 @@
 import NextLink from 'next/link';
 import { Heading, Icon, Text, HStack, Box, Link, useColorModeValue } from '@chakra-ui/react';
-import { NavItem as NavItemType } from '../../layout/admin/types';
 import { useRouter } from 'next/router';
+import { AdminNavItem } from '../../../types';
 
-export const NavItem = ({ item }: { item: NavItemType }) => {
+export const NavItem = ({ item }: { item: AdminNavItem }) => {
   const { pathname } = useRouter();
 
   if ('children' in item) {

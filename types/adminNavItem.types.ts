@@ -10,4 +10,4 @@ export type CompoundNavItem = {
   children: SimpleNavItem[];
 };
 
-export type NavItem = SimpleNavItem | CompoundNavItem;
+export type AdminNavItem = SimpleNavItem | CompoundNavItem;

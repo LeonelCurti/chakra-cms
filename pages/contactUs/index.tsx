@@ -2,9 +2,7 @@ import React from 'react'
 import { NextPage } from 'next'
 import { Box, Button, Divider, Grid, GridItem, Heading, Text, VStack } from '@chakra-ui/react'
 import { BsWhatsapp } from 'react-icons/bs'
-import { TopBar } from '../../components/topBar'
-import { Navbar } from '../../components/navigation'
-import { FooterPublic as Footer } from '../../components/footer/'
+import { PublicLayout } from '../../components/layout'
 
 const data = {
   address: '69 Gallaxy Enque, 23568 NY',
@@ -19,71 +17,66 @@ const googleMapUrl = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13125
 
 const ContactUs: NextPage = () => {
   return (
-    <>
-      <TopBar />
-      <Navbar />
-      <Box as={'section'}>
-        <Heading
-          lineHeight={1.1}
-          fontWeight={600}
-          fontSize={'2xl'}
-          my={5}
-          textAlign='center'>
-          Contact Us
-        </Heading>
-        <Grid
-          templateColumns={{ base: '1fr', md: '3fr 2fr' }}
-          gap={4}
-          p={3}
-        >
-          <GridItem>
-            <Box w={'full'}
-              h={{ base: 300, md: 'full' }} >
-              <iframe
-                src={googleMapUrl}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen={false}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade" />
-            </Box>
-          </GridItem>
-          <GridItem >
-            <Box bg='gray.50' p={7}>
-              <VStack spacing={5} alignItems={'flex-start'}>
-                <Text fontSize={'sm'} textTransform={'uppercase'} fontWeight={600}>
-                  Address:{' '}
-                  <Text as={'span'} textTransform={'none'} fontWeight={500}
-                  >{data.address}</Text>
-                </Text>
-                <Text fontSize={'sm'} textTransform={'uppercase'} fontWeight={600}>
-                  WhatsApp:{' '}
-                  <Text as={'span'} textTransform={'none'} fontWeight={500}
-                  >{data.phone}</Text>
-                </Text>
-                <Text fontSize={'sm'} textTransform={'uppercase'} fontWeight={600}>
-                  Email:{' '}
-                  <Text as={'span'} textTransform={'none'} fontWeight={500}
-                  >{data.email}</Text>
-                </Text>
-                <Divider px={2} />
-                <VStack spacing={5} alignItems={'flex-start'} fontSize={'sm'}>
-                  <Text fontWeight={600} textTransform={'uppercase'}>Opening hours</Text>
-                  <VStack alignItems={'flex-start'} fontWeight={500}>
-                    <Text>{data.scheduleTime1}</Text>
-                    <Text>{data.scheduleTime2}</Text>
-                  </VStack>
-                  <Text fontWeight={600} textTransform={'uppercase'}>¿Have any questions?</Text>
-                  <Button as={'a'} href={data.whatssAppHref} colorScheme='whatsapp' leftIcon={<BsWhatsapp />}>Send WhatsApp</Button>
+    <PublicLayout>
+      <Heading
+        lineHeight={1.1}
+        fontWeight={600}
+        fontSize={'2xl'}
+        my={5}
+        textAlign='center'>
+        Contact Us
+      </Heading>
+      <Grid
+        templateColumns={{ base: '1fr', md: '3fr 2fr' }}
+        gap={4}
+        p={3}
+      >
+        <GridItem>
+          <Box w={'full'}
+            h={{ base: 300, md: 'full' }} >
+            <iframe
+              src={googleMapUrl}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade" />
+          </Box>
+        </GridItem>
+        <GridItem >
+          <Box bg='gray.50' p={7}>
+            <VStack spacing={5} alignItems={'flex-start'}>
+              <Text fontSize={'sm'} textTransform={'uppercase'} fontWeight={600}>
+                Address:{' '}
+                <Text as={'span'} textTransform={'none'} fontWeight={500}
+                >{data.address}</Text>
+              </Text>
+              <Text fontSize={'sm'} textTransform={'uppercase'} fontWeight={600}>
+                WhatsApp:{' '}
+                <Text as={'span'} textTransform={'none'} fontWeight={500}
+                >{data.phone}</Text>
+              </Text>
+              <Text fontSize={'sm'} textTransform={'uppercase'} fontWeight={600}>
+                Email:{' '}
+                <Text as={'span'} textTransform={'none'} fontWeight={500}
+                >{data.email}</Text>
+              </Text>
+              <Divider px={2} />
+              <VStack spacing={5} alignItems={'flex-start'} fontSize={'sm'}>
+                <Text fontWeight={600} textTransform={'uppercase'}>Opening hours</Text>
+                <VStack alignItems={'flex-start'} fontWeight={500}>
+                  <Text>{data.scheduleTime1}</Text>
+                  <Text>{data.scheduleTime2}</Text>
                 </VStack>
+                <Text fontWeight={600} textTransform={'uppercase'}>¿Have any questions?</Text>
+                <Button as={'a'} href={data.whatssAppHref} colorScheme='whatsapp' leftIcon={<BsWhatsapp />}>Send WhatsApp</Button>
               </VStack>
-            </Box>
-          </GridItem>
-        </Grid>
-      </Box>
-      <Footer />
-    </>
+            </VStack>
+          </Box>
+        </GridItem>
+      </Grid>
+    </PublicLayout>
 
   )
 }

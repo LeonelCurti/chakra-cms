@@ -1,16 +1,12 @@
 import type { NextPage } from 'next'
-import { TopBar } from '../components/topBar'
-import { Navbar } from '../components/navigation';
-import { FooterPublic as Footer } from '../components/footer';
+import { PublicLayout } from '../components/layout';
 
 const Home: NextPage = () => {
   return (
-    <>
-      <TopBar />
-      <Navbar />
+    <PublicLayout>
       Home Page
-      <Footer />
-    </>
+    </PublicLayout>
+
 
   )
 }

@@ -1,45 +1,16 @@
 import React from "react";
 import { Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Flex, HStack, IconButton, Text, useDisclosure } from "@chakra-ui/react";
 import { FiHeart, FiMenu, FiSearch, FiShoppingCart, FiUser } from 'react-icons/fi'
-import { SearchInput } from "../inputs";
+import { SearchInput } from "../../inputs";
 import { DesktopNav } from "./DesktopNav";
-import { NavItem } from "../../types";
+import { PublicNavItem } from "../../../types";
 import { MobileNav } from "./MobileNav";
 
+type Props = {
+  navItems: PublicNavItem[]
+}
 
-const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: 'Home',
-    href: '/'
-  },
-  {
-    label: 'Products',
-    children: [
-      {
-        label: 'Jeans',
-        href: '#',
-      },
-      {
-        label: 'Shoes',
-        href: '#',
-      },
-    ],
-  },
-  {
-    label: 'About',
-    href: '#',
-  },
-  {
-    label: 'Contact',
-    href: '/contactUs',
-  },
-  {
-    label: 'Admin',
-    href: '/admin/products',
-  },
-];
-
-export const Navbar = () => {
+export const Navbar = ({ navItems }: Props) => {
   const {
     isOpen: isOpenSearchDrawer,
     onOpen: onOpenSearchDrawer,
@@ -83,7 +54,7 @@ export const Navbar = () => {
             fontWeight={"bold"}>
             Logo</Text>
           <Flex display={{ base: 'none', md: 'flex' }} w='full' ml={10}>
-            <DesktopNav navItems={NAV_ITEMS} />
+            <DesktopNav navItems={navItems} />
           </Flex>
         </Flex>
 
@@ -140,7 +111,7 @@ export const Navbar = () => {
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader borderBottomWidth='1px'>
-            "Search in our site"
+            Search in our site
           </DrawerHeader>
           <DrawerBody py={6}>
             <SearchInput
@@ -157,14 +128,12 @@ export const Navbar = () => {
         placement='left'
       >
         <DrawerOverlay />
-        <DrawerContent>
+        <DrawerContent >
           <DrawerCloseButton />
           <DrawerHeader borderBottomWidth='1px'>
-            'Menu'
+            Menu
           </DrawerHeader>
-          <DrawerBody>
-            <MobileNav navItems={NAV_ITEMS} />
-          </DrawerBody>
+          <MobileNav navItems={navItems} />
         </DrawerContent>
       </Drawer>
     </>

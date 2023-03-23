@@ -1,6 +1,5 @@
 import React from "react";
 import NextLink, { type LinkProps as NextLinkProps } from "next/link"
-import { NavItem } from "../../types";
 import {
   Box,
   Link as ChakraLink,
@@ -11,6 +10,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { DesktopSubNav } from "./DesktopSubNav";
+import { PublicNavItem } from "../../../types";
 
 type ChakraAndNextProps = LinkProps & NextLinkProps;
 
@@ -25,7 +25,7 @@ const ChakraNextLink = React.forwardRef<HTMLAnchorElement, ChakraAndNextProps>((
   );
 });
 
-export const DesktopNav = ({ navItems }: { navItems: NavItem[] }) => {
+export const DesktopNav = ({ navItems }: { navItems: PublicNavItem[] }) => {
 
   return (
     <Stack

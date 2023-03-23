@@ -1,23 +1,23 @@
 import React from 'react'
-import { Box, BoxProps, CloseButton, Flex, IconButton, List, ListItem, Text, useColorMode, useColorModeValue } from '@chakra-ui/react'
-import {NavItem} from './navItem';
+import { Box, BoxProps, Center, CloseButton, Flex, IconButton, List, ListItem, Text, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import { FiMoon, FiSun } from 'react-icons/fi';
-import { NavItem as NavItemType } from '../../layout/admin/types'
+import { NavItem } from './NavItem';
+import { AdminNavItem } from '../../../types';
 
 interface Props extends BoxProps {
-  onClose: () => void;
-  routes: NavItemType[];
+  navItems: AdminNavItem[];
 }
 
-export const Content = ({ routes, onClose }: Props) => {
+export const DesktopSideNav = ({ navItems }: Props) => {
   const { toggleColorMode, colorMode } = useColorMode()
 
   return (
     <Flex
       direction={'column'}
+      display={{ base: 'none', md: 'flex' }}
       justify='space-between'
-      // bg={useColorModeValue('gray.100', 'gray.900')}
-      borderRight="1px"
+      bg={useColorModeValue('gray.100', 'gray.900')}
+      borderRight="5px"
       borderRightColor={useColorModeValue('gray.300', 'gray.700')}
       w={{ base: 'full', md: 48 }}
       pos="fixed"
@@ -28,11 +28,10 @@ export const Content = ({ routes, onClose }: Props) => {
           <Text fontSize="2xl" fontWeight="bold">
             Logo
           </Text>
-          <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
         </Flex>
 
         <List width="full" overflowY="auto">
-          {routes.map((item) => (
+          {navItems.map((item) => (
             <ListItem key={item.label}>
               <NavItem item={item} />
             </ListItem>
@@ -41,14 +40,14 @@ export const Content = ({ routes, onClose }: Props) => {
         </List>
       </Box>
 
-      <Flex justify={'center'} m={2} >
+      <Center py={2} >
         <IconButton
           w={'auto'}
           aria-label='icon'
           onClick={() => toggleColorMode()}
           icon={colorMode === 'light' ? <FiSun /> : <FiMoon />}
         />
-      </Flex>
+      </Center>
     </Flex>
   )
 }

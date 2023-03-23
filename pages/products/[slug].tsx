@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Box, Button, Container, Flex, Heading, HStack, List, ListItem, Select, SimpleGrid, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from '@chakra-ui/react'
 import { FiHeart, FiMail, FiSend } from 'react-icons/fi'
 import { Breadcrum } from '../../components/breadcrum'
-import { Public as PublicLayout } from '../../components/layout'
+import { PublicLayout } from '../../components/layout'
 import { ProdDetailPhotosGallery } from '../../components/products/prodDetailPhotosGallery'
 
 

@@ -1,8 +1,8 @@
 import { FiHome, FiSettings, FiActivity, FiPlus, FiList } from "react-icons/fi";
 import { BiCategory } from "react-icons/bi";
-import { NavItem } from "./types";
+import { AdminNavItem } from "../../../types";
 
-export const navItems: NavItem[] = [
+export const navItems: AdminNavItem[] = [
   {
     label: "Home",
     icon: FiHome,
