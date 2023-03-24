@@ -22,7 +22,6 @@ export const Navbar = ({ navItems }: Props) => {
     onClose: onCloseMenuDrawer
   } = useDisclosure()
 
-
   return (
     <>
       <Flex

@@ -41,9 +41,10 @@ export const DesktopNav = ({ navItems }: { navItems: PublicNavItem[] }) => {
               <ChakraNextLink
                 p={2}
                 href={navItem.href ?? "#"}
-                textTransform={"uppercase"}
-                fontSize={"sm"}
-                fontWeight={600}
+                fontSize={"lg"}
+                //textTransform={"uppercase"}
+                //fontWeight={600}
+                //letterSpacing={"wider"}
                 //color={'gray.600'}
                 _hover={{
                   textDecoration: "none",

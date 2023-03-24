@@ -6,11 +6,12 @@ import { PublicNavItem } from '../../../types';
 export const MobileNav = ({ navItems }: { navItems: PublicNavItem[] }) => {
   return (
     <Stack
-      bg={'white'}
-      //p={4}
-      display={{ md: 'none' }}>
-      {navItems.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
+      spacing={0}
+      h={'full'}
+      overflowY={'auto'}
+    >
+      {navItems.map((navItem, i) => (
+        <MobileNavItem key={i} {...navItem} />
       ))}
     </Stack>
   );
