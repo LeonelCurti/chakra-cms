@@ -11,10 +11,10 @@ export const NavItem = ({ item }: { item: AdminNavItem }) => {
     return (
       <>
         <Heading
-          // color="whiteAlpha.700"
-          fontWeight="medium"
-          textTransform="uppercase"
-          letterSpacing={6}
+          color={useColorModeValue('gray.600','gray.300')}
+          //fontWeight="medium"
+          //textTransform="uppercase"
+          letterSpacing={2}          
           fontSize="sm"
           ml={8}
           mt={{ base: 6, '2xl': 8 }}
@@ -51,9 +51,9 @@ export const NavItem = ({ item }: { item: AdminNavItem }) => {
                       />
                       <Text
                         fontSize="md"
-                        fontWeight="medium"
+                        fontWeight="normal"
                         flex={1}
-                        letterSpacing="wider"
+                        letterSpacing="wide"
                         color={pathname === child.href ? "blue.500" : ""}
                       >
                         {child.label}
@@ -98,9 +98,9 @@ export const NavItem = ({ item }: { item: AdminNavItem }) => {
             />
             <Text
               fontSize="md"
-              fontWeight="medium"
+              fontWeight="normal"
               flex={1}
-              letterSpacing="wider"
+              letterSpacing="wide"
               color={pathname === item.href ? "blue.500" : ""}
             >
               {label}

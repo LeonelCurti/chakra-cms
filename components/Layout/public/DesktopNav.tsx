@@ -43,7 +43,6 @@ export const DesktopNav = ({ navItems }: { navItems: PublicNavItem[] }) => {
                 href={navItem.href ?? "#"}
                 fontSize={"lg"}
                 //textTransform={"uppercase"}
-                //fontWeight={600}
                 //letterSpacing={"wider"}
                 //color={'gray.600'}
                 _hover={{

@@ -62,7 +62,7 @@ const ProductDetail = () => {
             </HStack>
             <Text
               mt={2}
-              fontWeight={600}
+              fontWeight={'bold'}
               fontSize={'2xl'}>
               $350.00 USD
             </Text>

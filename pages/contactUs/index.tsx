@@ -20,7 +20,7 @@ const ContactUs: NextPage = () => {
     <PublicLayout>
       <Heading
         lineHeight={1.1}
-        fontWeight={600}
+        fontWeight={'bold'}
         fontSize={'2xl'}
         my={5}
         textAlign='center'>
@@ -47,29 +47,29 @@ const ContactUs: NextPage = () => {
         <GridItem >
           <Box bg='gray.50' p={7}>
             <VStack spacing={5} alignItems={'flex-start'}>
-              <Text fontSize={'sm'} textTransform={'uppercase'} fontWeight={600}>
+              <Text fontSize={'sm'} textTransform={'uppercase'} fontWeight={'bold'}>
                 Address:{' '}
                 <Text as={'span'} textTransform={'none'} fontWeight={500}
                 >{data.address}</Text>
               </Text>
-              <Text fontSize={'sm'} textTransform={'uppercase'} fontWeight={600}>
+              <Text fontSize={'sm'} textTransform={'uppercase'} fontWeight={'bold'}>
                 WhatsApp:{' '}
                 <Text as={'span'} textTransform={'none'} fontWeight={500}
                 >{data.phone}</Text>
               </Text>
-              <Text fontSize={'sm'} textTransform={'uppercase'} fontWeight={600}>
+              <Text fontSize={'sm'} textTransform={'uppercase'} fontWeight={'bold'}>
                 Email:{' '}
                 <Text as={'span'} textTransform={'none'} fontWeight={500}
                 >{data.email}</Text>
               </Text>
               <Divider px={2} />
               <VStack spacing={5} alignItems={'flex-start'} fontSize={'sm'}>
-                <Text fontWeight={600} textTransform={'uppercase'}>Opening hours</Text>
+                <Text fontWeight={'bold'} textTransform={'uppercase'}>Opening hours</Text>
                 <VStack alignItems={'flex-start'} fontWeight={500}>
                   <Text>{data.scheduleTime1}</Text>
                   <Text>{data.scheduleTime2}</Text>
                 </VStack>
-                <Text fontWeight={600} textTransform={'uppercase'}>¿Have any questions?</Text>
+                <Text fontWeight={'bold'} textTransform={'uppercase'}>¿Have any questions?</Text>
                 <Button as={'a'} href={data.whatssAppHref} colorScheme='whatsapp' leftIcon={<BsWhatsapp />}>Send WhatsApp</Button>
               </VStack>
             </VStack>

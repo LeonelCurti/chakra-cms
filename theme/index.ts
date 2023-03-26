@@ -1,8 +1,8 @@
 import { extendTheme } from "@chakra-ui/react";
-import { globalStyles } from "./styles";
+import styles from "./styles";
 
 const theme = extendTheme(
-  globalStyles,  
+  styles,  
 );
 
 export default theme;
