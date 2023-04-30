@@ -1,110 +1,124 @@
-import { Product } from "../types/types";
+import { Product } from "../types";
 
-
-export const data: Product[] = [  
-  {    
-    name:'iPhone 9',
-    sku: "5464",
-    category: "smartphones",
+export const dummyProducts: Product[] = [
+  {
+    name: "Hoose Clamp",
+    sku: "002005",
+    category: "accessories",
     price: 26,
-    slug:'iphone-9'
+    slug: "hoose-clamp",
+    img: "https://res.cloudinary.com/dte10bevv/image/upload/v1629671758/orderTaker/002005.jpg",
   },
   {
-    name:'iPhone 8',
-    sku: "1478",
-    category: "silicon",
+    name: "Bronze Elbow",
+    sku: "018003",
+    category: "bronze",
     price: 47,
-    slug:'iphone-8'
+    slug: "bronze-elbow",
+    img: "https://res.cloudinary.com/dte10bevv/image/upload/v1629671758/orderTaker/018003.jpg",
   },
   {
-    name:'core i9',
-    sku: "9514",
-    category: "pencil",
-    price: 96,
-    slug:'core-i9'
+    name: "Poly Elbow",
+    sku: "024049",
+    category: "polypropylene",
+    price: 0,
+    slug: "poly-elbow",
+    img: "https://res.cloudinary.com/dte10bevv/image/upload/v1629671758/orderTaker/024049.jpg",
   },
-  { 
-    name:'mouse microsoft',   
-    sku: "5464",
-    category: "apple",
+  {
+    name: "Equal Tee Fusion",
+    sku: "032105",
+    category: "fusion",
+    price: 20,
+    slug: "equal-tee-fusion",
+    img: "https://res.cloudinary.com/dte10bevv/image/upload/v1629671758/orderTaker/032105.jpg",
+  },
+  {
+    name: "Adapter Union Fusion",
+    sku: "038189",
+    category: "fusion",
+    price: 47,
+    slug: "adapter-union-fusion",
+    img: "https://res.cloudinary.com/dte10bevv/image/upload/v1629671758/orderTaker/038189.jpg",
+  },
+  {
+    name: "Ball Valve Fusion",
+    sku: "192044",
+    category: "valve",
+    price: 0,
+    slug: "ball-valve-fusion",
+    img: "https://res.cloudinary.com/dte10bevv/image/upload/v1629671758/orderTaker/192044.jpg",
+  },
+  {
+    name: "Bathroom Sink Faucet",
+    sku: "449163",
+    category: "faucet",
     price: 26,
-    slug:'mouse-microsoft'
+    slug: "bathroom-sink-faucet",
+    img: "https://res.cloudinary.com/dte10bevv/image/upload/v1629671758/orderTaker/449163.jpg",
   },
   {
-    name:'samsung s23',
-    sku: "1478",
-    category: "silicon",
-    price: 47,
-    slug:'samsung-s23'
+    name: "Bathroom Wall Faucet",
+    sku: "449165",
+    category: "faucet",
+    price: 0,
+    slug: "bathroom-wall-faucet",
+    img: "https://res.cloudinary.com/dte10bevv/image/upload/v1629671758/orderTaker/449165.jpg",
   },
   {
-    name:'apple power adapter',
-    sku: "9514",
-    category: "pencil",
+    name: "Mini Ball Valve",
+    sku: "450307",
+    category: "valve",
     price: 96,
-    slug:'apple-power-adapter',
-  },
-  {  
-    name:'streaming stick',  
-    sku: "5464",
-    category: "apple",
-    price: 26,
-    slug:'streaming-stick'
+    slug: "mini-ball-valve",
+    img: "https://res.cloudinary.com/dte10bevv/image/upload/v1629671758/orderTaker/450307.jpg",
   },
   {
-    name:'nintendo switch',
-    sku: "1478",
-    category: "silicon",
-    price: 47,
-    slug:'nintendo-switch'
+    name: "Magnet Valve",
+    sku: "408011",
+    category: "valve",
+    price: 0,
+    slug: "magnet-valve",
+    img: "https://res.cloudinary.com/dte10bevv/image/upload/v1629671758/orderTaker/408011.jpg",
   },
   {
-    name:'wireless keyboard',
-    sku: "9514",
-    category: "pencil",
-    price: 96,
-    slug:'wireless-keyboard'
-  },
-  {    
-    name:'external hard drive',
-    sku: "5464",
-    category: "apple",
-    price: 26,
-    slug:'exernal-hard-drive'
+    name: "Siphon for Kitchen",
+    sku: "354003",
+    category: "siphon",
+    price: 0,
+    slug: "siphon-for-kitchen",
+    img: "https://res.cloudinary.com/dte10bevv/image/upload/v1629671758/orderTaker/354003.jpg",
   },
   {
-    name:'fitness tracker',
-    sku: "1478",
-    category: "silicon",
-    price: 47,
-    slug:'fitness-tracker'
+    name: "Pivotal Tank Lever",
+    sku: "332093",
+    category: "toilet-parts",
+    price: 78,
+    slug: "pivotal-tank-lever",
+    img: "https://res.cloudinary.com/dte10bevv/image/upload/v1629671758/orderTaker/332093.jpg",
   },
   {
-    name:'portable ssd',
-    sku: "9514",
-    category: "pencil",
-    price: 96,
-    slug:'portable-ssd'
-  },
-  {   
-    name:'indoor camera', 
-    sku: "5464",
-    category: "apple",
-    price: 26,
-    slug:'indoor-camera'
+    name: "Manual Button",
+    sku: "332013",
+    category: "toilet-parts",
+    price: 0,
+    slug: "manual-override-button",
+    img: "https://res.cloudinary.com/dte10bevv/image/upload/v1629671758/orderTaker/332013.jpg",
   },
   {
-    name:'hdmi cable',
-    sku: "1478",
-    category: "silicon",
-    price: 47,
-    slug:'hdmi-cable'
+    name: "Degree Tank Lever",
+    sku: "332085",
+    category: "toilet-parts",
+    price: 86,
+    slug: "degree-tank-lever",
+    img: "https://res.cloudinary.com/dte10bevv/image/upload/v1629671758/orderTaker/332085.jpg",
   },
   {
-    name:'wireless controller',
-    sku: "9514",
-    category: "pencil",
-    price: 96,
-    slug:'wireless-controller'
+    name: "Gas Ball Valve",
+    sku: "246051",
+    category: "gas",
+    price: 0,
+    slug: "gas-ball-valve",
+    img: "https://res.cloudinary.com/dte10bevv/image/upload/v1629671758/orderTaker/246051.jpg",
   },
 ];

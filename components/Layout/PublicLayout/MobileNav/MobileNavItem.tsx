@@ -2,7 +2,7 @@ import React from 'react'
 import NextLink from "next/link"
 import { Flex, Link, Stack, Text, useDisclosure, Icon, Collapse, useColorModeValue } from '@chakra-ui/react';
 import { FiChevronDown } from 'react-icons/fi';
-import { PublicNavItem } from '../../../types';
+import { PublicNavItem } from '../navItems';
 
 export const MobileNavItem = ({ label, children, href }: PublicNavItem) => {
   const { isOpen, onToggle } = useDisclosure();

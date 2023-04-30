@@ -1,19 +1,19 @@
-import { Category } from "../types/types";
+import { Category } from "../types";
 
-export const data: Category[] = [  
+export const dummyCategories: Category[] = [  
   {    
-    name:'Accessories',
-    slug:'accessories',
+    name:'Fusion',
+    slug:'fusion',
     description:'sgsdgfsdfsfds'
   },
   {    
-    name:'Clothing1',
-    slug:'clothing',
+    name:'Faucets',
+    slug:'faucets',
     description:'sgsdgfdfgdsdfsfds'
   },
   {    
-    name:'Accessories234',
-    slug:'accessories',
+    name:'Hoses and Connectors',
+    slug:'hoses-and-connectors',
     description:'sgsdgfsdfsfds'
   },
   {    
@@ -22,8 +22,8 @@ export const data: Category[] = [
     description:'sgsdgfdfgdsdfsfds'
   },
   {    
-    name:'Accessories70890',
-    slug:'accessories',
+    name:'Buttons',
+    slug:'buttons',
     description:'sgsdgfsdfsfds'
   },
   {    
@@ -32,73 +32,18 @@ export const data: Category[] = [
     description:'sgsdgfdfgdsdfsfds'
   },
   {    
-    name:'Accessories45',
-    slug:'accessories',
+    name:'Furniture',
+    slug:'furniture',
     description:'sgsdgfsdfsfds'
   },
   {    
-    name:'Clothing5675',
-    slug:'clothing',
+    name:'Valves',
+    slug:'valves',
     description:'sgsdgfdfgdsdfsfds'
   },
   {    
-    name:'Accessories2342',
-    slug:'accessories',
+    name:'Siphons',
+    slug:'siphons',
     description:'sgsdgfsdfsfds'
-  },
-  {    
-    name:'Clothing8676',
-    slug:'clothing',
-    description:'sgsdgfdfgdsdfsfds'
-  },
-  {    
-    name:'Accessories787',
-    slug:'accessories',
-    description:'sgsdgfsdfsfds'
-  },
-  {    
-    name:'Clothing123',
-    slug:'clothing',
-    description:'sgsdgfdfgdsdfsfds'
-  },
-  {    
-    name:'Accessories235',
-    slug:'accessories',
-    description:'sgsdgfsdfsfds'
-  },
-  {    
-    name:'Clothing6896',
-    slug:'clothing',
-    description:'sgsdgfdfgdsdfsfds'
-  },
-  {    
-    name:'Accessories90',
-    slug:'accessories',
-    description:'sgsdgfsdfsfds'
-  },
-  {    
-    name:'Clothing45677',
-    slug:'clothing',
-    description:'sgsdgfdfgdsdfsfds'
-  },
-  {    
-    name:'Accessories7890',
-    slug:'accessories',
-    description:'sgsdgfsdfsfds'
-  },
-  {    
-    name:'Clothing890',
-    slug:'clothing',
-    description:'sgsdgfdfgdsdfsfds'
-  },
-  {    
-    name:'Accessories678',
-    slug:'accessories',
-    description:'sgsdgfsdfsfds'
-  },
-  {    
-    name:'Clothing279',
-    slug:'clothing',
-    description:'sgsdgfdfgdsdfsfds'
   },
 ]

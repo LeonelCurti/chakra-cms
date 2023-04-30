@@ -1,0 +1,101 @@
+{
+  "success": true,
+  "products": [
+    { "cod": "002005", "descrip": "ABRAZADERA CREMALLERA  ", "price": 106.08 },
+    { "cod": "004019", "descrip": "ABRAZADERA 2032 ", "price": 109.26 },
+    { "cod": "008053", "descrip": "CODO GALVA HM 2", "price": 1233.29 },
+    { "cod": "018003", "descrip": "CODO BRONCE GAS HH 1/4", "price": 219.34 },
+    { "cod": "022049", "descrip": "REDUCCION BRONCE GAS MM ", "price": 186.15 },
+    { "cod": "024049", "descrip": "CODO PPN HH 2", "price": 507.75 },
+    { "cod": "024085", "descrip": "CUPLA PPN 1", "price": 75.56 },
+    {
+      "cod": "032105",
+      "descrip": "TEE NORMAL 63 x 50 x 63 AS",
+      "price": 1123.32
+    },
+    { "cod": "038130", "descrip": "CUPLA REDUCCION 32 X 25  ", "price": 85.76 },
+    {
+      "cod": "038189",
+      "descrip": "UNION DOBLE MIXTA M 32 X 1",
+      "price": 1099.19
+    },
+    { "cod": "040127", "descrip": "ESPIGA PPL 3/4 x RM 2", "price": 118.48 },
+    { "cod": "042039", "descrip": "TAPA SIGAS 20", "price": 180.88 },
+    { "cod": "054025", "descrip": "ARANDELA FIBRA N22 1 ", "price": 20.16 },
+    {
+      "cod": "090055",
+      "descrip": "CABEZAL LPIAZZA LLAVE PASO 3/4",
+      "price": 1410.75
+    },
+    { "cod": "132015", "descrip": "CAÑO MAGNUM PN20 ", "price": 1606.76 },
+    { "cod": "192017", "descrip": "CANILLA PICO MANGA 1  ", "price": 1032.94 },
+    {
+      "cod": "192029",
+      "descrip": "LLAVE ESFERICA   3/4 PVC DUKE",
+      "price": 429.07
+    },
+    { "cod": "192044", "descrip": "VALVULA EVOLUTION 3/4 ", "price": 583.47 },
+    { "cod": "192059", "descrip": "SOPAPA 1 1/4 / 40MM  PVC", "price": 328.44 },
+    { "cod": "198011", "descrip": "CAMARA INSA M 1/2 PVC", "price": 1117.82 },
+    { "cod": "198023", "descrip": "CHAVETA ROSCADA x 100", "price": 15.38 },
+    { "cod": "202049", "descrip": "FERRUM BIDET 1 AGUJERO", "price": 12407.01 },
+    { "cod": "202458", "descrip": "FERRUM BARRAL FIJO 50cm", "price": 19487.3 },
+    { "cod": "246019", "descrip": "LLAVE GAS 2 ALARSA", "price": 29705.54 },
+    { "cod": "246051", "descrip": "LLAVE GAS   3/4 GAS ", "price": 2196.74 },
+    { "cod": "262004", "descrip": "LLAVE SIGAS ESFERICA 32", "price": 7152.11 },
+    { "cod": "270021", "descrip": "MEDIA UNION REDUC ", "price": 416.55 },
+    { "cod": "274011", "descrip": "MONTURA 1 x 1  EPOXI", "price": 1270.48 },
+    { "cod": "276083", "descrip": "NIPLE 1  x 100 cm EPOXI", "price": 2514.69 },
+    {
+      "cod": "278049",
+      "descrip": "NIPLE 1  x  20 cm BRONCE",
+      "price": 2328.18
+    },
+    { "cod": "280083", "descrip": "NIPLE 2   x   8 cm PPN", "price": 267.78 },
+    {
+      "cod": "312001",
+      "descrip": "REDUCCION HM 3/4 x 1/2 CROMO",
+      "price": 685.71
+    },
+    { "cod": "332013", "descrip": "BOTON LATERAL CAPEA CROMO", "price": 352.8 },
+    { "cod": "332085", "descrip": "MANIJA CUADRADA BRONCE", "price": 1180.43 },
+    { "cod": "332093", "descrip": "MECANISMO ANDINO BRONCE", "price": 2288.55 },
+    { "cod": "332213", "descrip": "BOTON CONCAVO DEALER", "price": 357.54 },
+    { "cod": "342053", "descrip": "PICO LAVATORIO COMPLETO", "price": 4041.17 },
+    {
+      "cod": "342059",
+      "descrip": "PICO PEIRANO MESADA ANTIGUO",
+      "price": 3017.5
+    },
+    { "cod": "354003", "descrip": "SIFON DOBLE  GOMA RAO", "price": 1310.46 },
+    {
+      "cod": "376005",
+      "descrip": "TAPA FRANKLIN INTERNA COMPLETA",
+      "price": 440.54
+    },
+    {
+      "cod": "390019",
+      "descrip": "TERMOTANQUE POPULI G.E ",
+      "price": 44437.54
+    },
+    {
+      "cod": "408011",
+      "descrip": "UNIDAD MAGNETICA 309 ORBIS ",
+      "price": 1666.53
+    },
+    { "cod": "424057", "descrip": "SOMBRERO H DE ZINC 3", "price": 1596.84 },
+    { "cod": "438187", "descrip": "TAPON M 1/2 EPOXI DEMA", "price": 108.05 },
+    {
+      "cod": "438250",
+      "descrip": "CUPLA RED 3/4 X 1/2  GALV",
+      "price": 197.37
+    },
+    {
+      "cod": "449163",
+      "descrip": "VIVA PLUS LAVATORIO PICO ",
+      "price": 7500.73
+    },
+    { "cod": "449165", "descrip": "VIVA PLUS BANERA ", "price": 10471.71 },
+    { "cod": "450307", "descrip": "LLAVIN ESFERICO HH 1/2 ", "price": 628.71 }
+  ]
+}

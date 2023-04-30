@@ -10,7 +10,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { DesktopSubNav } from "./DesktopSubNav";
-import { PublicNavItem } from "../../../types";
+import { PublicNavItem } from "../navItems";
 
 type ChakraAndNextProps = LinkProps & NextLinkProps;
 

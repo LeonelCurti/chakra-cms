@@ -3,7 +3,7 @@ import React from 'react'
 
 export const FooterPublic = () => {
   return (
-    <Flex bg={'gray.50'} justify='center' p={4}>
+    <Flex bg={'gray.50'} justify='center' p={2}>
       <Text>© {new Date().getFullYear()} Made by <Link href='https://twitter.com/leomcurti'>Leo</Link></Text>
     </Flex>
   )

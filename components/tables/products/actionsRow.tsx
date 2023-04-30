@@ -14,7 +14,7 @@ export const ActionsRow = ({ product }: { product: Product }) => {
     router.push(`/admin/products/${product.sku}`)
   }
   const handleView = () => {
-    router.push(`/products/${product.slug}`)
+    router.push(`/product/${product.slug}`)
   }
 
   return (

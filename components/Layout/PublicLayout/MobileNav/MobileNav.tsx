@@ -1,7 +1,7 @@
 import React from 'react'
 import { Stack } from '@chakra-ui/react';
 import { MobileNavItem } from './MobileNavItem';
-import { PublicNavItem } from '../../../types';
+import { PublicNavItem } from '../navItems';
 
 export const MobileNav = ({ navItems }: { navItems: PublicNavItem[] }) => {
   return (

@@ -1,10 +1,10 @@
 import React from "react";
 import { Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Flex, HStack, IconButton, Text, useDisclosure } from "@chakra-ui/react";
 import { FiHeart, FiMenu, FiSearch, FiShoppingCart, FiUser } from 'react-icons/fi'
-import { SearchInput } from "../../inputs";
-import { DesktopNav } from "./DesktopNav";
-import { PublicNavItem } from "../../../types";
-import { MobileNav } from "./MobileNav";
+import { SearchInput } from "../../../inputs";
+import { DesktopNav } from "../DesktopNav";
+import { PublicNavItem } from "../navItems";
+import { MobileNav } from "../MobileNav";
 
 type Props = {
   navItems: PublicNavItem[]
@@ -30,9 +30,9 @@ export const Navbar = ({ navItems }: Props) => {
         height={16}
         alignItems='center'
         justifyContent={"space-between"}
-        borderBottom={1}
-        borderStyle={'solid'}
-        borderColor={'gray.200'}
+        // borderBottom={1}
+        // borderStyle={'solid'}
+        // borderColor={'gray.100'}
       >
         <Flex
           flex={{ base: 1, md: 'auto' }}

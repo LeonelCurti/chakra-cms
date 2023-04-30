@@ -7,9 +7,9 @@ import {
   useReactTable,
 } from '@tanstack/react-table'
 import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Box, Tfoot, Text } from "@chakra-ui/react";
-import { data } from '../../../utils/dummyCategories';
+import { dummyCategories } from '../../../utils/dummyCategories';
 import { ActionsRow } from './actionsRow';
-import { Category } from '../../../types/types';
+import { Category } from '../../../types';
 import { Pagination } from '../pagination';
 
 const columnHelper = createColumnHelper<Category>()
@@ -39,7 +39,7 @@ const columns = [
 
 export const CategoriesTable = () => {
   const table = useReactTable({
-    data,
+    data:dummyCategories,
     columns,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),

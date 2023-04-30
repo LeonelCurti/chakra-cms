@@ -5,7 +5,7 @@ import { BsWhatsapp } from "react-icons/bs";
 
 export const TopBar = () => {
   return (
-    <Flex justify={{ base: 'center', sm: 'flex-end' }} color={'gray.500'} alignItems={'center'} gap={6} bg={'gray.50'} height={9} px={{ base: 0, sm: 10 }} >
+    <Flex justify={{ base: 'center', sm: 'flex-end' }} color={'white'} alignItems={'center'} gap={6} bg={'black'} height={9} px={{ base: 0, sm: 10 }} >
       <HStack spacing={2}>
         <Icon as={FiMail} />
         <Link
@@ -18,7 +18,7 @@ export const TopBar = () => {
         </Link>
       </HStack>
       <HStack spacing={2}>
-        <Icon as={BsWhatsapp} />
+        <Icon as={BsWhatsapp} color={'green.300'}/>
         <Link
           fontSize={'sm'}
           href='whatsapp://send?phone=346377868775454&text=hola'

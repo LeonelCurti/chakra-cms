@@ -7,9 +7,9 @@ import {
   useReactTable,
 } from '@tanstack/react-table'
 import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Checkbox, Box, Tfoot, Text, Link } from "@chakra-ui/react";
-import { data } from '../../../utils/dummyProducts';
-import {ActionsRow} from './actionsRow';
-import { Product } from '../../../types/types';
+import { dummyProducts } from '../../../utils/dummyProducts';
+import { ActionsRow } from './actionsRow';
+import { Product } from '../../../types';
 import { Pagination } from '../pagination';
 import NextLink from "next/link"
 const columnHelper = createColumnHelper<Product>()
@@ -58,7 +58,7 @@ const columns = [
 export const ProductsTable = () => {
   const [rowSelection, setRowSelection] = React.useState({})
   const table = useReactTable({
-    data,
+    data: dummyProducts,
     columns,
     state: {
       rowSelection,

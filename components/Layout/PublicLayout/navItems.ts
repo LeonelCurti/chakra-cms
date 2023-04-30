@@ -1,12 +1,17 @@
-import { PublicNavItem } from "../../../types";
+export type PublicNavItem = {
+  label: string;
+  children?: PublicNavItem[];
+  href?: string;
+};
 
-const navItems: PublicNavItem[] = [
+export const navItems: PublicNavItem[] = [
   {
     label: "Home",
     href: "/",
   },
   {
     label: "Products",
+    href: "/products",
     children: [
       {
         label: "Jeans",
@@ -20,7 +25,7 @@ const navItems: PublicNavItem[] = [
   },
   {
     label: "About",
-    href: "#",
+    href: "/",
   },
   {
     label: "Contact",
@@ -31,5 +36,3 @@ const navItems: PublicNavItem[] = [
     href: "/admin/products",
   },
 ];
-
-export default navItems;
