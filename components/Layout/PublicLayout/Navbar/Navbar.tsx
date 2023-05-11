@@ -1,10 +1,12 @@
 import React from "react";
-import { Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Flex, HStack, IconButton, Text, useDisclosure } from "@chakra-ui/react";
+import { Flex, HStack, IconButton, Menu, MenuButton, MenuDivider, MenuItem, MenuList, Text, useDisclosure } from "@chakra-ui/react";
 import { FiHeart, FiMenu, FiSearch, FiShoppingCart, FiUser } from 'react-icons/fi'
-import { SearchInput } from "../../../inputs";
 import { DesktopNav } from "../DesktopNav";
 import { PublicNavItem } from "../navItems";
-import { MobileNav } from "../MobileNav";
+import { SearchDrawer } from "@components/drawers";
+import { MainMenuDrawer } from "@components/drawers/mainMenuDrawer";
+import { CartDrawer } from "@components/drawers/cartDrawer";
+import { FavouritesDrawer } from "@components/drawers/favouritesDrawer";
 
 type Props = {
   navItems: PublicNavItem[]
@@ -21,6 +23,16 @@ export const Navbar = ({ navItems }: Props) => {
     onOpen: onOpenMenuDrawer,
     onClose: onCloseMenuDrawer
   } = useDisclosure()
+  const {
+    isOpen: isOpenCartDrawer,
+    onOpen: onOpenCartDrawer,
+    onClose: onCloseCartDrawer
+  } = useDisclosure()
+  const {
+    isOpen: isOpenFavouritesDrawer,
+    onOpen: onOpenFavouritesDrawer,
+    onClose: onCloseFavouritesDrawer
+  } = useDisclosure()
 
   return (
     <>
@@ -30,9 +42,6 @@ export const Navbar = ({ navItems }: Props) => {
         height={16}
         alignItems='center'
         justifyContent={"space-between"}
-        // borderBottom={1}
-        // borderStyle={'solid'}
-        // borderColor={'gray.100'}
       >
         <Flex
           flex={{ base: 1, md: 'auto' }}
@@ -72,15 +81,25 @@ export const Navbar = ({ navItems }: Props) => {
             onClick={onOpenSearchDrawer}
             _hover={{ bg: 'transparent', color: 'blue.600' }}
           />
-          <IconButton
-            display={{ base: 'none', md: 'inline-flex' }}
-            aria-label="favorite"
-            variant='ghost'
-            fontSize={{ base: 'xl', md: 'lg' }}
-            rounded={'full'}
-            icon={<FiUser />}
-            _hover={{ bg: 'transparent', color: 'blue.600' }}
-          />
+          <Menu placement="bottom">
+            <MenuButton            
+              as={IconButton}
+              display={{ base: 'none', md: 'inline-flex' }}
+              aria-label="user-options"
+              variant='ghost'
+              fontSize={{ base: 'xl', md: 'lg' }}
+              rounded={'full'}
+              icon={<FiUser />}
+              _hover={{ bg: 'transparent', color: 'blue.600' }}>
+            </MenuButton>
+            <MenuList>
+              <MenuItem>My Account</MenuItem>
+              <MenuItem>Settings</MenuItem>
+              <MenuDivider />
+              <MenuItem>Sign Out</MenuItem>
+            </MenuList>
+          </Menu>
+
           <IconButton
             display={{ base: 'none', md: 'inline-flex' }}
             aria-label="favorite"
@@ -88,6 +107,7 @@ export const Navbar = ({ navItems }: Props) => {
             fontSize={{ base: 'xl', md: 'lg' }}
             rounded={'full'}
             icon={<FiHeart />}
+            onClick={onOpenFavouritesDrawer}
             _hover={{ bg: 'transparent', color: 'blue.600' }}
           />
           <IconButton
@@ -96,45 +116,30 @@ export const Navbar = ({ navItems }: Props) => {
             fontSize={{ base: 'xl', md: 'lg' }}
             rounded={'full'}
             icon={<FiShoppingCart />}
+            onClick={onOpenCartDrawer}
             _hover={{ bg: 'transparent', color: 'blue.600' }}
           />
         </HStack>
       </Flex>
 
-      <Drawer
+      <SearchDrawer
         isOpen={isOpenSearchDrawer}
         onClose={onCloseSearchDrawer}
-        placement='top'
-      >
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader borderBottomWidth='1px'>
-            Search in our site
-          </DrawerHeader>
-          <DrawerBody py={6}>
-            <SearchInput
-              placeHolder='Search...'
-              onSearch={() => alert('search')}
-            />
-          </DrawerBody>
-        </DrawerContent>
-      </Drawer>
+      />
 
-      <Drawer
+      <MainMenuDrawer
         isOpen={isOpenMenuDrawer}
         onClose={onCloseMenuDrawer}
-        placement='left'
-      >
-        <DrawerOverlay />
-        <DrawerContent >
-          <DrawerCloseButton />
-          <DrawerHeader borderBottomWidth='1px'>
-            Menu
-          </DrawerHeader>
-          <MobileNav navItems={navItems} />
-        </DrawerContent>
-      </Drawer>
+        navItems={navItems}
+      />
+      <CartDrawer
+        isOpen={isOpenCartDrawer}
+        onClose={onCloseCartDrawer}
+      />
+      <FavouritesDrawer
+        isOpen={isOpenFavouritesDrawer}
+        onClose={onCloseFavouritesDrawer}
+      />
     </>
   );
 };

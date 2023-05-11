@@ -9,7 +9,7 @@ export const TopBar = () => {
       <HStack spacing={2}>
         <Icon as={FiMail} />
         <Link
-          href='mailto:test@examile.com'
+          href='mailto:test@example.com'
           fontSize={'sm'}
           _hover={{ textDecoration: 'none', color: 'blue.500', cursor: 'pointer', }}
           _visited={{ color: 'inherit' }}
