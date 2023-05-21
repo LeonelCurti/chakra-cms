@@ -17,7 +17,7 @@ export const dummyCategories: Category[] = [
     description:'sgsdgfsdfsfds'
   },
   {    
-    name:'Clothing789',
+    name:'Clothing',
     slug:'clothing',
     description:'sgsdgfdfgdsdfsfds'
   },
@@ -27,8 +27,8 @@ export const dummyCategories: Category[] = [
     description:'sgsdgfsdfsfds'
   },
   {    
-    name:'Clothing890',
-    slug:'clothing',
+    name:'Shoes',
+    slug:'shoes',
     description:'sgsdgfdfgdsdfsfds'
   },
   {    

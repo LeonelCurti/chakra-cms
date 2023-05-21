@@ -11,10 +11,10 @@ export const NavItem = ({ item }: { item: AdminNavItem }) => {
     return (
       <>
         <Heading
-          color={useColorModeValue('gray.600','gray.300')}
+          color={useColorModeValue('gray.600', 'gray.300')}
           //fontWeight="medium"
           //textTransform="uppercase"
-          letterSpacing={2}          
+          letterSpacing={2}
           fontSize="sm"
           ml={8}
           mt={{ base: 6, '2xl': 8 }}
@@ -26,44 +26,42 @@ export const NavItem = ({ item }: { item: AdminNavItem }) => {
           {
             children && (
               children.map((child) => (
-                <NextLink href={child.href} passHref key={child.label}>
-                  <Link variant="unstyled" _hover={{
-                    textDecoration: 'none',
-                  }}>
-                    <HStack
-                      align="center"
-                      justify="flex-start"
-                      height={{ base: 8, '2xl': 12 }}
-                      transition="ease-out"
-                      transitionProperty="background"
-                      transitionDuration="normal"
-                      _hover={{
-                        bg: useColorModeValue('gray.200', 'gray.700')
-                      }}
+                <Link key={child.label} as={NextLink} href={child.href} variant="unstyled" _hover={{
+                  textDecoration: 'none',
+                }}>
+                  <HStack
+                    align="center"
+                    justify="flex-start"
+                    height={{ base: 8, '2xl': 12 }}
+                    transition="ease-out"
+                    transitionProperty="background"
+                    transitionDuration="normal"
+                    _hover={{
+                      bg: useColorModeValue('gray.200', 'gray.700')
+                    }}
+                  >
+                    <Icon
+                      width={5}
+                      height={5}
+                      mr={4}
+                      ml={4}
+                      color={pathname === child.href ? "blue.500" : ""}
+                      as={child.icon}
+                    />
+                    <Text
+                      fontSize="md"
+                      fontWeight="normal"
+                      flex={1}
+                      letterSpacing="wide"
+                      color={pathname === child.href ? "blue.500" : ""}
                     >
-                      <Icon
-                        width={5}
-                        height={5}
-                        mr={4}
-                        ml={4}
-                        color={pathname === child.href ? "blue.500" : ""}
-                        as={child.icon}
-                      />
-                      <Text
-                        fontSize="md"
-                        fontWeight="normal"
-                        flex={1}
-                        letterSpacing="wide"
-                        color={pathname === child.href ? "blue.500" : ""}
-                      >
-                        {child.label}
-                      </Text>
-                      {pathname === child.href && (
-                        <Box width={1} height={6} bg="blue.500" />
-                      )}
-                    </HStack>
-                  </Link>
-                </NextLink>
+                      {child.label}
+                    </Text>
+                    {pathname === child.href && (
+                      <Box width={1} height={6} bg="blue.500" />
+                    )}
+                  </HStack>
+                </Link>   
               ))
             )
           }
@@ -73,8 +71,8 @@ export const NavItem = ({ item }: { item: AdminNavItem }) => {
   } else {
     const { label, icon, href } = item
     return (
-      <NextLink href={href ?? '#'} passHref key={label}>
-        <Link variant="unstyled" _hover={{
+      
+        <Link as={NextLink} href={href ?? '#'}  key={label} variant="unstyled" _hover={{
           textDecoration: 'none',
         }}>
           <HStack
@@ -109,8 +107,7 @@ export const NavItem = ({ item }: { item: AdminNavItem }) => {
               <Box width={1} height={6} bg="blue.500" />
             )}
           </HStack>
-        </Link>
-      </NextLink>
+        </Link>    
     )
   }
 

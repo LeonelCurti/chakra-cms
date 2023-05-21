@@ -1,9 +1,8 @@
 import React from "react";
-import NextLink, { type LinkProps as NextLinkProps } from "next/link"
+import NextLink from "next/link"
 import {
   Box,
-  Link as ChakraLink,
-  LinkProps,
+  Link,
   Popover,
   PopoverContent,
   PopoverTrigger,
@@ -11,19 +10,6 @@ import {
 } from "@chakra-ui/react";
 import { DesktopSubNav } from "./DesktopSubNav";
 import { PublicNavItem } from "../navItems";
-
-type ChakraAndNextProps = LinkProps & NextLinkProps;
-
-//ensure the children passed to PopoverTrigger is focusable and has a forwarded ref
-const ChakraNextLink = React.forwardRef<HTMLAnchorElement, ChakraAndNextProps>(({ href, children, ...props }, ref) => {
-  return (
-    <NextLink href={href} passHref>
-      <ChakraLink ref={ref} {...props}>
-        {children}
-      </ChakraLink>
-    </NextLink>
-  );
-});
 
 export const DesktopNav = ({ navItems }: { navItems: PublicNavItem[] }) => {
 
@@ -38,20 +24,18 @@ export const DesktopNav = ({ navItems }: { navItems: PublicNavItem[] }) => {
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
-              <ChakraNextLink
+              <Link
+                as={NextLink}
                 p={2}
                 href={navItem.href ?? "#"}
-                fontSize={"lg"}
-                //textTransform={"uppercase"}
-                //letterSpacing={"wider"}
-                //color={'gray.600'}
+                fontSize={"lg"}  
                 _hover={{
                   textDecoration: "none",
                   color: "blue.500",
                 }}>
                 {navItem.label}
-              </ChakraNextLink>
-            </PopoverTrigger>
+              </Link>
+             </PopoverTrigger>
 
             {navItem.children && (
               <PopoverContent

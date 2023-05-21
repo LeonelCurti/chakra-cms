@@ -91,6 +91,8 @@ export const ProdDetailPhotosGallery = () => {
           >
             <Box
               key={curIndex}
+              position={'relative'}
+              h={{base:300, sm:350, md:400}}
               as={motion.div}
               custom={direction}
               variants={variants}
@@ -105,11 +107,9 @@ export const ProdDetailPhotosGallery = () => {
               onDragEnd={handleOnSwipeEnd}
             >
               <Image
+                fill
                 alt={'product image'}
-                src={randomImages[curIndex]}
-                layout="responsive"
-                width="100%"
-                height="100%"
+                src={randomImages[curIndex]}     
                 objectFit='cover'
                 sizes="(min-width: 48em) 50vw,
                           100vw"
@@ -154,18 +154,18 @@ export const ProdDetailPhotosGallery = () => {
           randomImages.map((item, index) => (
             <Box
               key={index}
+              position={'relative'}
+              w={100}
+              h={100}
               cursor={'pointer'}
               onClick={() => changePhotoIndex(index)}
               border={curIndex === index ? '1px solid' : 'none'}
-              w={'100px'}
               opacity={curIndex === index ? '1' : '0.8'}
             >
               <Image
-                alt={'Thumbnail image'}
+                fill
                 src={item}
-                layout="responsive"
-                width={100}
-                height={100}
+                alt={'Thumbnail image'}
                 sizes="30vw"
                 objectFit='cover'
               />
@@ -190,9 +190,10 @@ export const ProdDetailPhotosGallery = () => {
               h={'70vh'}
             >
               <Image
+                fill
                 alt={'product image'}
                 src={randomImages[curIndex]}
-                layout="fill"
+                //layout="fill"
                 objectFit='contain'
               />
             </Box>

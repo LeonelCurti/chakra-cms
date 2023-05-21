@@ -47,47 +47,48 @@ export const ProductCard = (props: ProductCardProps) => {
               icon={<FiHeart />}
             />
           </Box>
-          <Box roundedTop={'md'} >
-            <Image
-              layout="responsive"
-              width="100%"
-              height="100%"
-              alt='product image'
-              objectFit='contain'
-              style={{
-                borderTopLeftRadius: '5px',
-                borderTopRightRadius: '5px'
-              }}
-              src={img || ImageNotFound}
-              quality={75}
-              sizes="(max-width: 480px) 50vw,
+          <Box
+            position={'relative'}
+            roundedTop={'md'}
+            h={{ base: 200, sm: 250 }} >
+              <Image
+                fill
+                alt='product image'
+                objectFit='contain'
+                style={{
+                  borderTopLeftRadius: '5px',
+                  borderTopRightRadius: '5px'
+                }}
+                src={img || ImageNotFound}
+                quality={75}
+                sizes="(max-width: 480px) 50vw,
                   (max-width: 768px) 33vw,
                   20vw"
-            />
+              />     
           </Box>
-        </Box>
-        <Flex direction={'column'} gap={2} align={'center'} textAlign={'center'} py={4} px={1}>
-          <Heading w={'full'} noOfLines={2} size={'xs'} fontWeight={'500'}>{title}</Heading>
+      </Box>
+      <Flex direction={'column'} gap={2} align={'center'} textAlign={'center'} py={4} px={1}>
+        <Heading w={'full'} noOfLines={2} size={'xs'} fontWeight={'500'}>{title}</Heading>
 
-          {
-            (price > 0) ? (
-              <Text fontSize={'lg'} fontWeight={'bold'}>
-                {`$${price}`}
-              </Text>
+        {
+          (price > 0) ? (
+            <Text fontSize={'lg'} fontWeight={'bold'}>
+              {`$${price}`}
+            </Text>
 
-            ) : (
-              <Button
-                as={'a'}
-                variant='outline'
-                size={'sm'}
-                onClick={handleSendWhatsappMsg}
-                leftIcon={<BsWhatsapp />}>
-                Consult
-              </Button>
-            )
-          }
-        </Flex>
-      </CardBody>
-    </Card>
+          ) : (
+            <Button
+              as={'a'}
+              variant='outline'
+              size={'sm'}
+              onClick={handleSendWhatsappMsg}
+              leftIcon={<BsWhatsapp />}>
+              Consult
+            </Button>
+          )
+        }
+      </Flex>
+    </CardBody>
+    </Card >
   )
 }

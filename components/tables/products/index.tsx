@@ -1,4 +1,5 @@
 import React from 'react'
+import NextLink from "next/link"
 import {
   createColumnHelper,
   flexRender,
@@ -11,7 +12,7 @@ import { dummyProducts } from '../../../utils/dummyProducts';
 import { ActionsRow } from './actionsRow';
 import { Product } from '../../../types';
 import { Pagination } from '../pagination';
-import NextLink from "next/link"
+
 const columnHelper = createColumnHelper<Product>()
 
 const columns = [
@@ -32,11 +33,12 @@ const columns = [
   columnHelper.accessor('name', {
     header: () => 'Name',
     cell: props => <>
-      <NextLink
-        href={`/admin/products/${props.row.original.sku}`} passHref
+      <Link
+        as={NextLink}
+        href={`/admin/products/${props.row.original.sku}`}
       >
-        <Link>{props.renderValue()}</Link>
-      </NextLink>
+        {props.renderValue()}
+      </Link>
       <Text fontSize='xs'>{`SKU: ${props.row.original.sku}`}</Text>
     </>
   }),
